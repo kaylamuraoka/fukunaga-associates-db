@@ -42,7 +42,7 @@ if ($conn->connect_error) {
   if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-      echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+      echo "id: " . $row["id"]. " - District: " . $row["name"]. "<br>";
     }
   } else {
     echo "0 results";
