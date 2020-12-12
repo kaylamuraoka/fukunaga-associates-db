@@ -54,11 +54,24 @@ if ($conn->connect_error) {
   if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-      echo "id: " . $row["id"]. "name: " . $row["name"]. " - District: " . $row["district_id"]. "<br>";
+      echo "id: " . $row["id"]. " - name: " . $row["name"]. " - District: " . $row["district_id"]. "<br>";
     }
   } else {
     echo "0 results";
   }
+
+  $sql = "SELECT id, first_name, complex_area_id FROM superintendent";
+  $result = $conn->query($sql);
+  
+  if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      echo "id: " . $row["id"]. " - first name: " . $row["first_name"]. " - Complex Area ID: " . $row["complex_area_id"]. "<br>";
+    }
+  } else {
+    echo "0 results";
+  }
+
 
   $conn->close();
 
