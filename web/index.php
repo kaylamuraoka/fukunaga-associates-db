@@ -47,6 +47,19 @@ if ($conn->connect_error) {
   } else {
     echo "0 results";
   }
+
+  $sql = "SELECT name, district_id FROM complex_area";
+  $result = $conn->query($sql);
+  
+  if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      echo "name: " . $row["name"]. " - District: " . $row["district_id"]. "<br>";
+    }
+  } else {
+    echo "0 results";
+  }
+
   $conn->close();
 
 $app->run();
