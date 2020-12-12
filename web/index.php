@@ -49,14 +49,14 @@ if ($conn->connect_error) {
     echo "0 results";
   }
 
-  $sql = "SELECT id, name, district_id FROM complex_area";
+  $sql = "SELECT complex_area.id, complex_area.name, CONCAT(complex_area.address, " ", complex_area.city, ", HI ", complex_area.zip_code) AS address, complex_area.phone,     complex_area.fax, district.name AS district FROM complex_area LEFT JOIN district ON complex_area.district_id=district.id";
   $result = $conn->query($sql);
   
   if ($result->num_rows > 0) {
     echo "This is the Complex Area Table:";
     // output data of each row
     while($row = $result->fetch_assoc()) {
-      echo "id: " . $row["id"]. " - name: " . $row["name"]. " - District: " . $row["district_id"]. "<br>";
+      echo "id: " . $row["id"]. " - name: " . $row["name"]. " - Address: " . $row["address"]. " - Phone: " . $row["phone"]. " - Fax: " . $row["fax"]. " - District: " . $row["district"]. "<br>";
     }
   } else {
     echo "0 results";
