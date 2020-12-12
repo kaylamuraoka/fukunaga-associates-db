@@ -40,6 +40,7 @@ if ($conn->connect_error) {
   $result = $conn->query($sql);
   
   if ($result->num_rows > 0) {
+    echo "This is the District Table:";
     // output data of each row
     while($row = $result->fetch_assoc()) {
       echo "id: " . $row["id"]. " - District: " . $row["name"]. "<br>";
@@ -52,6 +53,7 @@ if ($conn->connect_error) {
   $result = $conn->query($sql);
   
   if ($result->num_rows > 0) {
+    echo "This is the Complex Area Table:";
     // output data of each row
     while($row = $result->fetch_assoc()) {
       echo "id: " . $row["id"]. " - name: " . $row["name"]. " - District: " . $row["district_id"]. "<br>";
@@ -64,6 +66,7 @@ if ($conn->connect_error) {
   $result = $conn->query($sql);
   
   if ($result->num_rows > 0) {
+    echo "This is the Superintendent Table:";
     // output data of each row
     while($row = $result->fetch_assoc()) {
       echo "id: " . $row["id"]. " - first name: " . $row["first_name"]. " - Complex Area ID: " . $row["complex_area_id"]. "<br>";
@@ -72,6 +75,31 @@ if ($conn->connect_error) {
     echo "0 results";
   }
 
+  $sql = "SELECT * FROM complex";
+  $result = $conn->query($sql);
+  
+  if ($result->num_rows > 0) {
+    echo "This is the Complex Table:";
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      echo "id: " . $row["id"]. " - name: " . $row["name"]. " - Complex Area ID: " . $row["complex_area_id"]. "<br>";
+    }
+  } else {
+    echo "0 results";
+  }
+
+   $sql = "SELECT doe_code, name FROM school";
+  $result = $conn->query($sql);
+  
+  if ($result->num_rows > 0) {
+    echo "This is the School Table:";
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      echo "doe_code: " . $row["doe_code"]. " - name: " . $row["name"]. "<br>";
+    }
+  } else {
+    echo "0 results";
+  }
 
   $conn->close();
 
