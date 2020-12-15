@@ -53,10 +53,10 @@ if ($conn->connect_error) {
                 <th scope="col">Website</th>
                 <th scope="col">Complex</th>
                 <th scope="col">Complex Area</th>
-                <th scope="col">District/th>
-                <th scope="col">Island/th>
-                <th scope="col">Charter/th>
-                <th scope="col">Esis Name/th>
+                <th scope="col">District</th>
+                <th scope="col">Island</th>
+                <th scope="col">Charter</th>
+                <th scope="col">Esis Name</th>
               </tr>
             </thead>
             <tbody>';
