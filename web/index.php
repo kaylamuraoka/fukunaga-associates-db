@@ -39,7 +39,7 @@ if ($conn->connect_error) {
   $sql = "SELECT * FROM schools_view";
   $result = $conn->query($sql);
 
-  echo '<table class="table">
+  echo '<table class="table table-sm">
             <thead class="thead-dark">
               <tr>
                 <th scope="col">DOE Code</th>
