@@ -1,47 +1,71 @@
 <?php
+  // Database
+  include('./config/db.php');
 
-require('../vendor/autoload.php');
+  // Set session
+  session_start();
+  if(isset($_POST['recors-limit'])){
+    $_SESSION['records-limit'] = $_POST['records-limit'];
+  }
 
-$app = new Silex\Application();
-$app['debug'] = true;
+  // The $limit variable sets the dynamic limit for displaying the result via the pagination and select dropdown.
+  $limit = isset($_SESSION['records-limit']) ? $_SESSION['records-limit'] : 5;
+  // Current pagination page number
+  $page = (isset($_GET['page']) && is_numeric($_GET['page']) ) ? $_GET['page'] : 1;
+  // To get the offset or paginationStart we deduct the current page from 1 and divide it by the page limit.
+  $paginationStart = ($page - 1) * $limit;
+  // Limit query
+  $schools = $conn->query("SELECT * FROM schools_view LIMIT $paginationStart, $limit")->fetchAll();
 
-// Register the monolog logging service
-$app->register(new Silex\Provider\MonologServiceProvider(), array(
-  'monolog.logfile' => 'php://stderr',
-));
+  // Get total records
+  $sql = $conn->query("SELECT COUNT(doe_code) AS school_code FROM schools_view")->fetchAll();
+  $allRecords = $sql[0]['school_code'];
 
-// Register view rendering
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/views',
-));
+  // Calculate total pages
+  // ceil() function rounds the number up to the nearest integer
+  $totalPages = ceil($allRecords / $limit);
 
-// Our web handlers
-$app->get('/', function() use($app) {
-  $app['monolog']->addDebug('logging output.');
-  return $app['twig']->render('index.twig');
-});
+  // Prev + Next
+  $prev = $page - 1;
+  $next = $page + 1;
+?>
 
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-$server = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$db = substr($url["path"], 1);
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/main.css" />
+    <title>Schools Page</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="text-center mb-5">DOE Schools Information</h2>
 
-// Create connection
-$conn = new mysqli($server, $username, $password, $db);
-// Check connection
-if ($conn->connect_error) {
-   die("Connection failed: " . $conn->connect_error);
-}
-  echo "Connected successfully";
-  
-  $sql = "SELECT * FROM schools_view";
-  $result = $conn->query($sql);
+      <!-- Select dropdown -->
+      <div class="d-flex flex-row-reverse bd-highlight mb-3">
+            <form action="index.php" method="post">
+                <select name="records-limit" id="records-limit" class="custom-select">
+                    <option disabled selected>Records Limit</option>
+                    <?php foreach([5,7,10,12] as $limit) : ?>
+                    <option
+                        <?php if(isset($_SESSION['records-limit']) && $_SESSION['records-limit'] == $limit) echo 'selected'; ?>
+                        value="<?= $limit; ?>">
+                        <?= $limit; ?>
+                    </option>
+                    <?php endforeach; ?>
+                </select>
+            </form>
+        </div>
 
-  echo '<table class="table table-sm">
-            <thead class="thead-dark">
-              <tr>
+        <!-- Datatable -->
+        <table class="table table-bordered mb-5">
+          <thead>
+              <tr class="table-success">
                 <th scope="col">DOE Code</th>
                 <th scope="col">Name</th>
                 <th scope="col">Address</th>
@@ -58,95 +82,63 @@ if ($conn->connect_error) {
                 <th scope="col">Charter</th>
                 <th scope="col">Esis Name</th>
               </tr>
-            </thead>
-            <tbody>';
-         
-  if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-      echo '<tr>';
-      echo '<th scope="row">'.$row["doe_code"].'</th>';
-      echo '<td>'.$row["name"].'</td>';
-      echo '<td>'.$row["address"].'</td>';
-      echo '<td>'.$row["phone"].'</td>';
-      echo '<td>'.$row["fax"].'</td>';
-      echo '<td>'.$row["principal"].'</td>';
-      echo '<td>'.$row["grade_range"].'</td>';
-      echo '<td>'.$row["type"].'</td>';
-      echo '<td>'.$row["website"].'</td>';
-      echo '<td>'.$row["complex"].'</td>';
-      echo '<td>'.$row["complex_area"].'</td>';
-      echo '<td>'.$row["district"].'</td>';
-      echo '<td>'.$row["island"].'</td>';
-      echo '<td>'.$row["charter"].'</td>';
-      echo '<td>'.$row["esis_name"].'</td>';
-      echo '</tr>';
-    }
-    echo '</tbody>
-        </table>'; 
-  } else {
-    echo '<tr>
-            <td colspan="15">0 results found</td>
+          </thead>
+          <tbody>
+            <?php foreach($schools as $school): ?>
+                <tr>
+                    <th scope="row"><?php echo $school['doe_code']; ?></th>
+                    <td><?php echo $school['name']; ?></td>
+                    <td><?php echo $school['address']; ?></td>
+                    <td><?php echo $school['phone']; ?></td>
+                    <td><?php echo $school['fax']; ?></td>
+                    <td><?php echo $school['principal']; ?></td>
+                    <td><?php echo $school['grade_range']; ?></td>
+                    <td><?php echo $school['type']; ?></td>
+                    <td><?php echo $school['website']; ?></td>
+                    <td><?php echo $school['complex']; ?></td>
+                    <td><?php echo $school['complex_area']; ?></td>
+                    <td><?php echo $school['district']; ?></td>
+                    <td><?php echo $school['island']; ?></td>
+                    <td><?php echo $school['charter']; ?></td>
+                    <td><?php echo $school['esis_name']; ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
 
-          </tr>
-        </tbody>
-      </table>'; 
-  }
+        <!-- Pagination -->
+        <nav aria-label="Page navigation example mt-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item <?php if($page <= 1){ echo 'disabled'; } ?>">
+                    <a class="page-link"
+                        href="<?php if($page <= 1){ echo '#'; } else { echo "?page=" . $prev; } ?>">Previous</a>
+                </li>
 
-  // $sql = "SELECT complex_area.id, complex_area.name, CONCAT(complex_area.address, " ", complex_area.city, ", HI ", complex_area.zip_code) AS address, complex_area.phone,     complex_area.fax, district.name AS district FROM complex_area LEFT JOIN district ON complex_area.district_id=district.id";
-  // $result = $conn->query($sql);
-  
-  // if ($result->num_rows > 0) {
-  //   echo "This is the Complex Area Table:";
-  //   // output data of each row
-  //   while($row = $result->fetch_assoc()) {
-  //     echo "id: " . $row["id"]. " - name: " . $row["name"]. " - Address: " . $row["address"]. " - Phone: " . $row["phone"]. " - Fax: " . $row["fax"]. " - District: " . $row["district"]. "<br>";
-  //   }
-  // } else {
-  //   echo "0 results";
-  // }
+                <?php for($i = 1; $i <= $totalPages; $i++ ): ?>
+                <li class="page-item <?php if($page == $i) {echo 'active'; } ?>">
+                    <a class="page-link" href="index.php?page=<?= $i; ?>"> <?= $i; ?> </a>
+                </li>
+                <?php endfor; ?>
 
-  $sql = "SELECT id, first_name, complex_area_id FROM superintendent";
-  $result = $conn->query($sql);
-  
-  if ($result->num_rows > 0) {
-    echo "This is the Superintendent Table:";
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-      echo "id: " . $row["id"]. " - first name: " . $row["first_name"]. " - Complex Area ID: " . $row["complex_area_id"]. "<br>";
-    }
-  } else {
-    echo "0 results";
-  }
+                <li class="page-item <?php if($page >= $totalPages) { echo 'disabled'; } ?>">
+                    <a class="page-link"
+                        href="<?php if($page >= $totalPages){ echo '#'; } else {echo "?page=". $next; } ?>">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
-  $sql = "SELECT * FROM complex";
-  $result = $conn->query($sql);
-  
-  if ($result->num_rows > 0) {
-    echo "This is the Complex Table:";
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-      echo "id: " . $row["id"]. " - name: " . $row["name"]. " - Complex Area ID: " . $row["complex_area_id"]. "<br>";
-    }
-  } else {
-    echo "0 results";
-  }
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
-   $sql = "SELECT doe_code, name FROM school";
-  $result = $conn->query($sql);
-  
-  if ($result->num_rows > 0) {
-    echo "This is the School Table:";
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-      echo "doe_code: " . $row["doe_code"]. " - name: " . $row["name"]. "<br>";
-    }
-  } else {
-    echo "0 results";
-  }
+    <script>
+      $(document).ready(function () {
+        $('#records-limit').change(function(){
+          $('form').submit();
+        });
+      });
+    </script>
 
-  $conn->close();
-
-$app->run();
-
-
+  </body>
+</html>
