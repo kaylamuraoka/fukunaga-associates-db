@@ -1,6 +1,4 @@
-<?php 
-  include('./login_logic.php');
-?>
+
 
 <!-- The Page renders the content below -->
 <!DOCTYPE html>
