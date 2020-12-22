@@ -1,6 +1,6 @@
 <?php
 // Include config file to connect to MySQL database
-  include('./../config.php');
+  include('./../config/db.php');
 
   // Define variables and initialize with empty values
   $first_name = $last_name = $email = $password = $confirm_password = "";
