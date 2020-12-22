@@ -49,10 +49,6 @@
 
         </form>
 
-        <?php
-        if()
-        ?>
-
       </div>
     </div>
   </div>
