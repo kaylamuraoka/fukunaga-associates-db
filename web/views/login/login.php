@@ -21,7 +21,7 @@
         if ($count === 1) {
           session_register("myUsername");
           $_SESSION['login_user'] = $myUsername;
-          header('Location: ./../home/home.html');
+          header('Location: ./../home.php');
         } else {
           $error = "Your Username or Password is invalid. Try again.");
         }
@@ -44,7 +44,7 @@
   <script src="https://kit.fontawesome.com/b7705bf7e8.js" crossorigin="anonymous"></script>
 </head>
 <!-- Custom stylesheet -->
-<link rel="stylesheet" type="text/css" href="./../../stylesheets/style.css">
+<link rel="stylesheet" type="text/css" href="./../../stylesheets/login.css">
 </head>
 
 <body>
