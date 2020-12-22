@@ -1,5 +1,33 @@
-<!-- Include connection to database -->
-<?php include('./../../config/db_conn.php'); ?>
+<?php 
+  // Include connection to database
+  include('./../../config/db_conn.php');
+  session_start();
+
+  // Log user in
+  if (isset($_POST['username']) && isset($_POST['password'])) {
+    // Get username and password from login form
+    $myUsername = mysqli_real_escape_string($conn, $_POST['username']);
+    $myPassword = mysqli_real_escape_string($conn, $_POST['password']);
+    
+    // If no error in form, log user in
+    if (count($errors) == 0) {
+      $query = "SELECT * FROM users WHERE username = '$myUsername' AND password = '$myPassword'";
+      $result = mysqli_query($conn, $query);
+      $row = mysqli_fetch_assoc($result);
+
+      $count = mysqli_num_rows($result);
+
+      // If result matched $myusername and $mypassword, table row must be 1 row
+        if ($count === 1) {
+          session_register("myUsername");
+          $_SESSION['login_user'] = $myUsername;
+          header('Location: ./../home/home.html');
+        } else {
+          $error = "Your Username or Password is invalid. Try again.");
+        }
+    }
+  }
+?>
 
 <!-- The Page renders the content below -->
 <!DOCTYPE html>
@@ -8,7 +36,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Login Page</title>
   <!-- Bootstrap v4.5 stylesheet -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -26,7 +54,7 @@
         <div class="col-12 user-img">
           <img src="./../../images/user-avatar.jpg">
         </div>
-        <form class="col-12" method="POST">
+        <form action = "" class="col-12" method="POST">
           <!-- Username Input Fields -->
           <div class="form-group">
             <i class="fas fa-user"></i>
@@ -39,18 +67,11 @@
           </div>
           <!-- Login Button -->
           <button type="submit" name="login-btn" class="btn"><i class="fas fa-sign-in-alt icon"></i>Login</button>
-
           <!-- Forgot Password Link -->
           <div class="col-12 forgot">
             <a>Forgot Password?</a>
           </div>
-
         </form>
-
-        <?php
-
-        ?>
-
       </div>
     </div>
   </div>
