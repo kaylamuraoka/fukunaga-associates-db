@@ -27,8 +27,6 @@
           <img src="./../../images/user-avatar.jpg">
         </div>
         <form class="col-12" method="POST">
-          <!-- Form Validaiton Messages -->
-          <?php include('messages.php'); ?>
           <!-- Username Input Fields -->
           <div class="form-group">
             <i class="fas fa-user"></i>
@@ -48,6 +46,10 @@
           </div>
 
         </form>
+
+        <?php
+
+        ?>
 
       </div>
     </div>
