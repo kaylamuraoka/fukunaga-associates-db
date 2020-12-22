@@ -8,8 +8,8 @@ define('_DBPASSWD', $url["pass"]);
 define('_DBNAME', substr($url["path"], 1));
 
 // Create connection
-
 $conn = new mysqli( _DBHOST, _DBUSER, _DBPASSWD, _DBNAME);
+
 // Check connection
 if ($conn->connect_error) {
    die("Connection failed: " . $conn->connect_error);
