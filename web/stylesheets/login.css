@@ -58,7 +58,7 @@ body {
 
 button {
   width: 40%;
-  margin: 5px 0 25px;
+  margin: 5px 0 15px;
 }
 
 .btn {
@@ -91,10 +91,6 @@ button {
 .link a {
   color: #c2fbfe !important;
   font-weight: bold;
-}
-
-.sign-up-title {
-  margin-bottom: 15px;
 }
 
 /* Media queries for responsive font sizes*/
