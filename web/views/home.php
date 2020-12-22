@@ -1,6 +1,6 @@
 <!-- After successful login, it will display this home page. -->
 <?php 
-  include('session.php');
+  include('./login/login_logic.php');
 ?> 
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@
 
 <body>
   <div class="jumbotron">
-    <h1 class="display-4">Welcome, <?php echo $login_session; ?>!</h1>
+    <h1 class="display-4">Welcome, <?php echo $$_SESSION['first_name']; ?>!</h1>
     <a class="btn btn-primary btn-lg" href="./login/logout.php">Sign Out</a>
   </div>
 

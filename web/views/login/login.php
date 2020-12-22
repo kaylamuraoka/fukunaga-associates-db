@@ -1,32 +1,5 @@
 <?php 
-  // Include connection to database
-  include('./../../config/db_conn.php');
-  session_start();
-
-  // Log user in
-  if (isset($_POST['username']) && isset($_POST['password'])) {
-    // Get username and password from login form
-    $myUsername = mysqli_real_escape_string($conn, $_POST['username']);
-    $myPassword = mysqli_real_escape_string($conn, $_POST['password']);
-    
-    // If no error in form, log user in
-    if (count($errors) == 0) {
-      $query = "SELECT * FROM users WHERE username = '$myUsername' AND password = '$myPassword'";
-      $result = mysqli_query($conn, $query);
-      $row = mysqli_fetch_assoc($result);
-
-      $count = mysqli_num_rows($result);
-
-      // If result matched $myusername and $mypassword, table row must be 1 row
-        if ($count === 1) {
-          session_register("myUsername");
-          $_SESSION['login_user'] = $myUsername;
-          header('Location: ./../home.php');
-        } else {
-          $error = "Your Username or Password is invalid. Try again.");
-        }
-    }
-  }
+  include('./login_logic.php');
 ?>
 
 <!-- The Page renders the content below -->
@@ -54,6 +27,8 @@
         <div class="col-12 user-img">
           <img src="./../../images/user-avatar.jpg">
         </div>
+        <!-- Form validation messages -->
+        <?php include('messages.php'); ?>
         <form action = "" class="col-12" method="POST">
           <!-- Username Input Fields -->
           <div class="form-group">
