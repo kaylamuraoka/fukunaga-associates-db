@@ -35,7 +35,7 @@
           </div>
           <!-- Password Input Fields -->
           <div class="form-group">
-            <i class="fas fa-lock "></i>
+            <i class="fas fa-lock"></i>
             <input type="text" name="password" class="form-control" placeholder="Enter Password" required>
           </div>
           <!-- Login Button -->

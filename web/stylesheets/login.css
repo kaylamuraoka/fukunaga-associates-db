@@ -2,14 +2,16 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: lightgrey;
+  background-color: whitesmoke;
   color: #fff;
 }
+
 .main-section {
   margin: 0 auto;
   margin-top: 130px;
   padding: 0;
 }
+
 .modal-content {
   background-color: #3b4652;
   opacity: 0.95;
@@ -80,7 +82,8 @@ button {
   margin-right: 7px;
 }
 
-.forgot {
+.forgot,
+.link {
   padding: 5px 0 25px;
 }
 
