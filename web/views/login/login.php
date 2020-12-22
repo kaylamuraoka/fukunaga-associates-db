@@ -28,10 +28,10 @@
           <img src="./../../images/user-avatar.jpg">
         </div>
         <form action = "" class="col-12" method="POST">
-          <!-- Username Input Fields -->
+          <!-- Email Input Fields -->
           <div class="form-group">
             <i class="fas fa-user"></i>
-            <input type="text" name="username" class="form-control" placeholder="Enter Username" required>
+            <input type="text" name="email" class="form-control" placeholder="Enter Email" required>
           </div>
           <!-- Password Input Fields -->
           <div class="form-group">
