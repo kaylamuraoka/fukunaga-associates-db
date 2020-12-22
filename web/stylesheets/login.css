@@ -84,16 +84,8 @@ button {
   padding: 5px 0 25px;
 }
 
-.forgot a {
-  color: #c2fbfe;
+.forgot a,
+.link a {
+  color: #c2fbfe !important;
   font-weight: bold;
-}
-
-.error {
-  background: #f2dede;
-  color: #a94442;
-  padding: 10px;
-  width: 95%;
-  border-radius: 5px;
-  margin: 5px auto;
 }
