@@ -142,35 +142,35 @@
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="col-12" method="POST">
           <div class="form-row">
             <!-- Name Input Fields -->
-            <div class="form-group col-6 <?php echo (!empty($first_name_err)) ? 'has-error' : ''; ?>">
+            <div class="form-group col-6">
               <i class="fas fa-user"></i>
-              <input type="text" name="first_name" class="form-control" placeholder="First name" value="<?php echo $first_name; ?>" required>
-              <span class="help-block"><?php echo $first_name_err; ?></span>
+              <input type="text" name="first_name" class="form-control <?php echo (!empty($first_name_err)) ? 'is-invalid' : ''; ?>" placeholder="First name" value="<?php echo $first_name; ?>" required>
+              <div class="invalid-feedback"><?php echo $first_name_err; ?></div>
             </div>
-            <div class="form-group col-6 <?php echo (!empty($last_name_err)) ? 'has-error' : ''; ?>">
+            <div class="form-group col-6">
               <i class="fas fa-user"></i>
-              <input type="text" name="last_name" class="form-control" placeholder="Last name" value="<?php echo $last_name; ?>" required>
-              <span class="help-block"><?php echo $last_name_err; ?></span>
+              <input type="text" name="last_name" class="form-control <?php echo (!empty($last_name_err)) ? 'is-invalid' : ''; ?>" placeholder="Last name" value="<?php echo $last_name; ?>" required>
+              <div class="invalid-feedback"><?php echo $last_name_err; ?></div>
             </div>
           </div>
           <!-- Email Input Fields -->
-          <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
+          <div class="form-group">
             <i class="fas fa-envelope"></i>
-            <input type="email" name="email" class="form-control" placeholder="Email Address" value="<?php echo $email; ?>" required>
-            <span class="help-block"><?php echo $email_err; ?></span>
+            <input type="email" name="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" placeholder="Email Address" value="<?php echo $email; ?>" required>
+            <div class="invalid-feedback"><?php echo $email_err; ?></div>
           </div>
           <!-- Password Input Field -->
-          <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+          <div class="form-group">
             <i class="fas fa-lock"></i>
-            <input type="text" name="password" class="form-control" placeholder="Password (6 to 12 characters)"
+            <input type="text" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" placeholder="Password (6 to 12 characters)"
              value="<?php echo $password; ?>" required>
-             <span class="help-block"><?php echo $password_err; ?></span>
+             <div class="invalid-feedback"><?php echo $password_err; ?></div>
           </div>
           <!-- Confirm Password Input Field -->
-          <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+          <div class="form-group">
             <i class="fas fa-lock"></i>
-            <input type="text" name="password" class="form-control" placeholder="Confirm Password" value="<?php echo $confirm_password; ?>" required>
-            <span class="help-block"><?php echo $confirm_password_err; ?></span>
+            <input type="text" name="password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" placeholder="Confirm Password" value="<?php echo $confirm_password; ?>" required>
+            <div class="invalid-feedback"><?php echo $confirm_password_err; ?></div>
           </div>
           <!-- Submit Buttons -->
           <button type="submit" name="registration-btn" class="btn"></i>Submit</button>
