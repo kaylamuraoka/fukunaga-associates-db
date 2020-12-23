@@ -12,7 +12,7 @@
   <script src="https://kit.fontawesome.com/b7705bf7e8.js" crossorigin="anonymous"></script>
 </head>
 <!-- Custom stylesheet -->
-<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 </head>
 
 <body>
