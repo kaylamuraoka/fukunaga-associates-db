@@ -1,3 +1,3 @@
 <?php 
-include_once("views/register.php"); 
+include_once("views/add_user.php"); 
 ?>
