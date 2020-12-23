@@ -13,7 +13,7 @@
   <script src="https://kit.fontawesome.com/b7705bf7e8.js" crossorigin="anonymous"></script>
 </head>
 <!-- Custom stylesheet -->
-<link rel="stylesheet" type="text/css" href="./../../stylesheets/login.css">
+<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
     <div class="col-sm-8 main-section">
       <div class="modal-content">
         <div class="col-12 user-img">
-          <img src="./../../images/user-avatar.jpg">
+          <img src="./../images/user-avatar.jpg">
         </div>
         <form action = "" class="col-12" method="POST">
           <!-- Email Input Fields -->

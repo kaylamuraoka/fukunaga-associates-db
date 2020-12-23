@@ -1,7 +1,21 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  --font-ubuntu: "Ubuntu", monospace;
+  --color-border: #e5e5e5;
+}
+
+.font-ubuntu {
+  font: normal 500 16px var(--font-ubuntu);
+}
+
+#register {
+  padding: 5% 0;
+  background: url("../images/background.png") no-repeat;
+  background-size: cover;
+}
 
 body {
-  font-family: "Roboto", sans-serif;
   background-color: whitesmoke;
   color: #fff;
 }
