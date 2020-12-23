@@ -176,7 +176,7 @@
           <button type="submit" name="registration-btn" class="btn"></i>Submit</button>
 
           <div class="col-12 link">
-            <h4>Already have an account? <a href="./login/login.php">Login here</a>.</h4>
+            <h4>Already have an account? <a href="login.php">Login here</a>.</h4>
           </div>
 
         </form>
