@@ -1,5 +1,3 @@
-
-
 <!-- The Page renders the content below -->
 <!DOCTYPE html>
 <html lang="en">
