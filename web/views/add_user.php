@@ -3,6 +3,12 @@
   include('layouts/header.php');
 ?>
 
+<?php
+  if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    require('register_process.php');
+  }
+?>
+
 <!-- registration area -->
     <section id="register">
       <div class="row m-0">
