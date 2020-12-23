@@ -5,7 +5,7 @@
 
 <?php
   if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    require('register_process.php');
+    require('registration/register_process.php');
   }
 ?>
 
@@ -31,7 +31,7 @@
             </div>
           </div>
           <div class="d-flex justify-content-center">
-            <form action="#" method="post" enctype="multipart/form-data" id="reg-form">
+            <form action="register.php" method="post" enctype="multipart/form-data" id="reg-form">
               <div class="form-row">
                 <div class="col">
                   <input type="text" value="<?php if(isset($_POST['firstName'])) echo $_POST['firstName']; ?>" required name="firstName" id="firstName" class="form-control"
