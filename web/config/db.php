@@ -7,11 +7,16 @@ define('_DBUSER', $url["user"]);
 define('_DBPASSWD', $url["pass"]);  
 define('_DBNAME', substr($url["path"], 1));
 
-/* Attempt to connect to MySQL database */
-$conn = new mysqli( _DBHOST, _DBUSER, _DBPASSWD, _DBNAME);
+try{
+   /* Attempt to connect to MySQL database */
+   $conn = new mysqli(_DBHOST, _DBUSER, _DBPASSWD, _DBNAME);
 
-// Check connection
-if ($conn->connect_error) {
-   die("Connection failed: " . $conn->connect_error);
+   // encoded language
+   mysqli_set_charset($conn, 'utf8');
+
+} catch (Exception $ex) {
+   // if there if any problem with the connection
+   print "An Exception occurred. Message: ".$ex->getMessage();
+} catch (Error $e){
+   print "The system is busy please try again later.";
 }
-?>
