@@ -51,7 +51,7 @@ if (empty($error)) {
   $q = mysqli_stmt_init($conn);
 
   // Prepare sql statement
-  mysqli_stmt_prepare($q, $squery);
+  mysqli_stmt_prepare($q, $query);
 
   // Bind values with statement
   mysqli_stmt_bind_param($q, 'sssss', $firstName, $lastName, $email, $hashed_pass, $profileImage);
