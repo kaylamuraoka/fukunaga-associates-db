@@ -47,7 +47,6 @@
                 <div class="col">
                   <input type="password" required name="password" id="password" class="form-control"
                     placeholder="Password*">
-                    <small id="confirm_error" class="text-danger"></small>
                 </div>
               </div>
 
@@ -55,22 +54,19 @@
                 <div class="col">
                   <input type="password" required name="confirm_pwd" id="confirm_pwd" class="form-control"
                     placeholder="Confirm Password*">
+                  <div id="confirm_error" class="invalid-feedback"></div>
                 </div>
               </div>
 
               <div class="form-check form-check-inline">
                 <input type="checkbox" name="agreement" class="form-check-input" required>
                 <label for="agreement" class="form-check-label font-ubuntu text-black-50">I agree to the <a
-                    href="#">terms,
-                    conditions, and policy</a> (*)</label>
+                    href="#">terms and conditions</a> (*)</label>
               </div>
 
               <div class="submit-btn text-center my-5">
                 <button type="submit" class="btn btn-warning rounded-pill text-dark px-5">Continue</button>
               </div>
-
-
-
 
             </form>
           </div>

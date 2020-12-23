@@ -6,7 +6,9 @@ $(document).ready(function (e) {
     if ($password.val() === $confirm.val()) {
       return true;
     } else {
-      $error.text("Password does not match");
+      $password.addClass("is-invalid");
+      $confirm.addClass("is-invalid");
+      $error.text("Those passwords didn't match. Try again.");
       event.preventDefault();
     }
   });
