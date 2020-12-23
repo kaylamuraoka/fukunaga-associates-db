@@ -5,7 +5,7 @@
 
 <?php
   if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    require('registration/register_process.php');
+    require('registration/register-process.php');
   }
 ?>
 
