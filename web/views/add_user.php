@@ -34,18 +34,18 @@
             <form action="register.php" method="post" enctype="multipart/form-data" id="reg-form">
               <div class="form-row">
                 <div class="col">
-                  <input type="text" required name="firstName" id="firstName" class="form-control"
+                  <input type="text" value="<?php if(isset($_POST['firstName'])) echo $_POST['firstName']; ?>" required name="firstName" id="firstName" class="form-control"
                     placeholder="First Name*">
                 </div>
                 <div class="col">
-                  <input type="text" required name="lastName" id="lastName" class="form-control"
+                  <input type="text" value="<?php if(isset($_POST['lastName'])) echo $_POST['lastName']; ?>" required name="lastName" id="lastName" class="form-control"
                     placeholder="Last Name*">
                 </div>
               </div>
 
               <div class="form-row my-4">
                 <div class="col">
-                  <input type="email" required name="email" id="email" class="form-control" placeholder="Email*">
+                  <input type="email" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" required name="email" id="email" class="form-control" placeholder="Email*">
                 </div>
               </div>
 
