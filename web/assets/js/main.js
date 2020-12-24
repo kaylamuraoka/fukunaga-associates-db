@@ -57,6 +57,7 @@ $(document).ready(function (e) {
         "1px solid red"
       );
       $error.text("Passwords don't match.");
+      $error.removeClass("text-success");
       $error.addClass("text-danger");
     } else {
       // Input is valid
@@ -67,6 +68,7 @@ $(document).ready(function (e) {
         "1px solid green"
       );
       $error.text("Passwords Match.");
+      $error.removeClass("text-danger");
       $error.addClass("text-success");
     }
   });
