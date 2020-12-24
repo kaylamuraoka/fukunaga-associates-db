@@ -31,7 +31,7 @@ $(document).ready(function (e) {
     }
   });
 
-  $('#reg-form input[type="email"]').blur(function () {
+  $('#reg-form input[type="email"]').on("input", function () {
     if (!$(this).val().trim() || $(this).val().indexOf("@") < 0) {
       // Input field is empty
       $(this).removeClass("is-valid");
@@ -45,7 +45,7 @@ $(document).ready(function (e) {
     }
   });
 
-  $confirm.blur(function () {
+  $confirm.on("input", function () {
     if (
       !$confirm.val().trim() ||
       $password.val().trim() != $confirm.val().trim()
