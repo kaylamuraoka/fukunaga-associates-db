@@ -70,15 +70,13 @@ $(document).ready(function (e) {
       $(this).removeClass("is-valid");
       $(this).addClass("is-invalid");
       $(this).css("border-bottom", "1px solid red");
-      $error.addClass("text-danger");
       $error.text("Passwords don't match.");
     } else {
       // Input is valid
       $password.removeClass("is-invalid");
       $password.addClass("is-valid");
       $password.css("border-bottom", "1px solid green");
-      $error.addClass("text-success");
-      $error.text("Passwords Match!");
+      $error.text("");
     }
   });
 });

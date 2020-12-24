@@ -66,6 +66,5 @@ if (empty($error)) {
   //   print "Error while registration.";
   // }
 
-} else {
+} 
   echo 'not validated';
-}
