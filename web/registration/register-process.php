@@ -41,7 +41,7 @@ $profileImg = upload_profile('./../assets/images/profile/', $files);
 if (empty($error)) {
   // register a new user
   $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
-  require("./../config/db.php");
+  require("config/db.php");
 
   // Make a query
   $query = "INSERT INTO `users` (`userID`, `firstName`, `lastName`, `email`, `password`, `profileImg`, `createdAt`, `updatedAt`)";
