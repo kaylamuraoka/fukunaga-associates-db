@@ -33,7 +33,7 @@
           </div>
           <div class="d-flex justify-content-center">
             <!-- Registration Form -->
-            <form action="#" method="POST" enctype="multipart/form-data" id="reg-form">
+            <form action="register.php" method="POST" enctype="multipart/form-data" id="reg-form">
               <div class="form-row">
                 <div class="col">
                   <input type="text" value="<?php if(isset($_POST['firstName'])) echo $_POST['firstName']; ?>" required name="firstName" id="firstName" class="form-control"
