@@ -24,7 +24,19 @@ $(document).ready(function (e) {
     }
   });
 
-  $('#reg-form input[type="text"] input[type="email"]').blur(function () {
+  $('#reg-form input[type="text"]').blur(function () {
+    if (!$(this).val().trim()) {
+      $(this).removeClass("is-valid");
+      $(this).addClass("is-invalid");
+      $(this).css("border-bottom", "1px solid red");
+    } else {
+      $(this).removeClass("is-invalid");
+      $(this).addClass("is-valid");
+      $(this).css("border-bottom", "1px solid green");
+    }
+  });
+
+  $('#reg-form input[type="email"]').blur(function () {
     if (!$(this).val().trim()) {
       $(this).removeClass("is-valid");
       $(this).addClass("is-invalid");
