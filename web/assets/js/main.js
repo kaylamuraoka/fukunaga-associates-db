@@ -47,7 +47,7 @@ $(document).ready(function (e) {
 
   $('#reg-form input[type="password"]').on("input", function () {
     if (
-      !$confirm.val().trim() ||
+      !$(this).val().trim() ||
       $password.val().trim() != $confirm.val().trim()
     ) {
       // Input field is empty
@@ -55,12 +55,14 @@ $(document).ready(function (e) {
       $(this).addClass("is-invalid");
       $(this).css("border-bottom", "1px solid red");
       $error.text("Passwords don't match.");
+      $error.addClass("text-danger");
     } else {
       // Input is valid
       this.removeClass("is-invalid");
       $(this).addClass("is-valid");
       $(this).css("border-bottom", "1px solid green");
-      $error.text("");
+      $error.text("Passwords Match.");
+      $error.addClass("text-danger");
     }
   });
 });
