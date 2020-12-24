@@ -6,7 +6,14 @@ $(document).ready(function (e) {
   });
 
   $("#reg-form").submit(function (event) {
-    if ($("#password").val() === $("#confirm_pwd").val()) {
+    let $password = $("#password").val();
+    let $confirm = $("#confirm_pwd").val();
+    if (
+      $password === $confirm &&
+      $password.length > 8 &&
+      $password.match(/[a-z]/) &&
+      $password.match(/\d/)
+    ) {
       return true;
     } else {
       event.preventDefault();
@@ -32,6 +39,32 @@ $(document).ready(function (e) {
       // Input is valid
       validInput($(this));
     }
+  });
+
+  // Validate password is strong
+  $("#password").on("input", function () {
+    $errors = [];
+    // Validate the length
+    if ($("#password").val().length < 8) {
+      $errors.push("Your password must be at least 8 characters long.");
+      invalidInput($("#password"));
+    }
+
+    // Validate letter
+    if ($("#password").match(/[a-z]/)) {
+    } else {
+      $errors.push("Your password must have at least one letter.");
+    }
+
+    // Validate number
+    if ($("#password").match(/\d/)) {
+    } else {
+      $errors.push("Your password must have at least one number.");
+    }
+
+    $.each($errors, function (index, error) {
+      $("#pwd-strength ul").append(`<li>${error}</li>`);
+    });
   });
 
   $("#password, #confirm_pwd").on("keyup", function () {
