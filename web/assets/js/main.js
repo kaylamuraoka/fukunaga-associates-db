@@ -9,14 +9,28 @@ $(document).ready(function (e) {
     let $password = $("#password");
     let $confirm = $("#confirm_pwd");
     let $error = $("#confirm_error");
-    if ($password.val() === $confirm.val()) {
+    if (
+      $password.val().trim() === $confirm.val().trim() &&
+      !$password.val().trim() &&
+      $confirm.val().trim()
+    ) {
+      // Input is valid
+      $password.removeClass("is-invalid");
+      $password.addClass("is-valid");
+      $password.css("border-bottom", "1px solid green");
+      $confirm.removeClass("is-invalid");
+      $confirm.addClass("is-valid");
+      $confirm.css("border-bottom", "1px solid green");
+      $error.addClass("text-success");
+      $error.text("Passwords Match!");
       return true;
     } else {
       $password.addClass("is-invalid");
       $password.css("border-bottom", "1px solid red");
       $confirm.addClass("is-invalid");
       $confirm.css("border-bottom", "1px solid red");
-      $error.text("Those passwords didn't match. Try again.");
+      $error.addClass("text-success");
+      $error.text("Passwords don't match.");
       // empty input values
       $password.val("");
       $confirm.val("");
@@ -26,10 +40,13 @@ $(document).ready(function (e) {
 
   $('#reg-form input[type="text"]').blur(function () {
     if (!$(this).val().trim()) {
+      // Input field is empty
       $(this).removeClass("is-valid");
       $(this).addClass("is-invalid");
       $(this).css("border-bottom", "1px solid red");
+      $(this).val("");
     } else {
+      // Input is valid
       $(this).removeClass("is-invalid");
       $(this).addClass("is-valid");
       $(this).css("border-bottom", "1px solid green");
@@ -38,10 +55,13 @@ $(document).ready(function (e) {
 
   $('#reg-form input[type="email"]').blur(function () {
     if (!$(this).val().trim()) {
+      // Input field is empty
       $(this).removeClass("is-valid");
       $(this).addClass("is-invalid");
       $(this).css("border-bottom", "1px solid red");
+      $(this).val("");
     } else {
+      // Input is valid
       $(this).removeClass("is-invalid");
       $(this).addClass("is-valid");
       $(this).css("border-bottom", "1px solid green");
