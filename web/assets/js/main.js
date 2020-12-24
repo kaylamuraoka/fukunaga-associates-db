@@ -19,9 +19,7 @@ $(document).ready(function (e) {
   $('#reg-form input[type="text"]').on("input", function () {
     if (!$(this).val().trim()) {
       // Input field is empty
-      $(this).removeClass("is-valid");
-      $(this).addClass("is-invalid");
-      $(this).css("border-bottom", "1px solid red");
+      invalidInput($(this));
     } else {
       // Input is valid
       $(this).removeClass("is-invalid");
@@ -45,7 +43,7 @@ $(document).ready(function (e) {
   });
 
   $("#password, #confirm_pwd").on("keyup", function () {
-    if ($("#password").val() == $("#confirm_pwd").val()) {
+    if ($("#password").val().trim() === $("#confirm_pwd").val().trim()) {
       $("#pwd-validation").text("Passwords Match.").css("color", "green");
     } else $("#pwd-validation").text("Passwords don't match.").css("color", "red");
   });
@@ -89,4 +87,16 @@ function readURL(input) {
 
     reader.readAsDataURL(input.files[0]);
   }
+}
+
+function invalidInput(element) {
+  element.removeClass("is-valid");
+  element.addClass("is-invalid");
+  element.css("border-bottom", "1px solid red");
+}
+
+function validInput(element) {
+  element.removeClass("is-invalid");
+  element.addClass("is-valid");
+  element.css("border-bottom", "1px solid green");
 }
