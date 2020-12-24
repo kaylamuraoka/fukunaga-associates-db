@@ -28,9 +28,11 @@ $(document).ready(function (e) {
     if (!$(this).val()) {
       $(this).removeClass("is-valid");
       $(this).addClass("is-invalid");
+      $(this).css("border-bottom", "1px solid red");
     } else {
       $(this).removeClass("is-invalid");
       $(this).addClass("is-valid");
+      $(this).css("border-bottom", "1px solid green");
     }
   });
 });
