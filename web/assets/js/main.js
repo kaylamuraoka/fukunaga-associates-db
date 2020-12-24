@@ -6,9 +6,7 @@ $(document).ready(function (e) {
   });
 
   $("#reg-form").submit(function (event) {
-    let $password = $("#password");
-    let $confirm = $("#confirm_pwd");
-    if ($password.val().trim() === $confirm.val().trim()) {
+    if ($("#password").val() === $("#confirm_pwd").val()) {
       return true;
     } else {
       event.preventDefault();
@@ -36,30 +34,17 @@ $(document).ready(function (e) {
     }
   });
 
-  $('#reg-form input[type="password"]').on("input", function () {
-    let $password = $("#password").val().trim();
-    let $confirm = $("#confirm_pwd").val().trim();
-    let $message = $("#pwd-validation");
-
-    if ($password === $confirm && !$password && !$confirm) {
+  $("#password, #confirm_pwd").on("keyup", function () {
+    if ($("#password").val() == $("#confirm_pwd").val()) {
       // Input is valid
-      validInput($(this));
-
-      $message.text("Passwords Match.");
-      $message.removeClass("text-danger");
-      $message.addClass("text-success");
-    } else if (!$(this).val().trim()) {
-      // No input yet
-      $message.text(
-        "Please enter a password with 8 or more characters (no spaces)."
-      );
-      $message.addClass("text-black-50");
+      $("#pwd-validation").html("Passwords Match.").css("color", "green");
+      validInput($("#password"));
+      validInput($("#confirm_pwd"));
     } else {
-      invalidInput($(this));
-      // Input field is empty
-      $message.text("Passwords don't match.");
-      $message.removeClass("text-success");
-      $message.addClass("text-danger");
+      // Input is invalid
+      $("#pwd-validation").html("Passwords don't match.").css("color", "red");
+      invalidInput($("#password"));
+      invalidInput($("#confirm_pwd"));
     }
   });
 });
@@ -77,13 +62,11 @@ function readURL(input) {
 }
 
 function invalidInput(element) {
-  element.removeClass("is-valid");
-  element.addClass("is-invalid");
+  element.removeClass("is-valid").addClass("is-invalid");
   element.css("border-bottom", "1px solid red");
 }
 
 function validInput(element) {
-  element.removeClass("is-invalid");
-  element.addClass("is-valid");
+  element.removeClass("is-invalid").addClass("is-valid");
   element.css("border-bottom", "1px solid green");
 }
