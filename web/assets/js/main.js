@@ -54,7 +54,7 @@ $(document).ready(function (e) {
   });
 
   $('#reg-form input[type="email"]').blur(function () {
-    if (!$(this).val().trim() || !$(this).val().indexOf("@") != -1) {
+    if (!$(this).val().trim() || $(this).val().indexOf("@") < 0) {
       // Input field is empty
       $(this).removeClass("is-valid");
       $(this).addClass("is-invalid");
