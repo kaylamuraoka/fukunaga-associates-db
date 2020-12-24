@@ -10,7 +10,7 @@ function validate_input_text($textValue){
     return $sanitize_str;
   }
   // if empty return empty string
-  return "";
+  return '';
 }
 
 function validate_input_email($emailValue){
@@ -23,5 +23,5 @@ function validate_input_email($emailValue){
     return $sanitize_str;
   }
   // if empty return empty string
-  return "";
+  return '';
 }

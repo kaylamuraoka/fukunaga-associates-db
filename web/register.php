@@ -19,6 +19,7 @@
               account.</p>
             <span class="font-ubuntu text-black-50">Already have an account? <a href="login.php">Login here</a>.</span>
           </div>
+          <!-- Upload Photo Section -->
           <div class="upload-profile-image d-flex justify-content-center pb-5">
             <div class="text-center">
               <div class="d-flex justify-content-center">
@@ -31,6 +32,7 @@
             </div>
           </div>
           <div class="d-flex justify-content-center">
+            <!-- Registration Form -->
             <form action="register.php" method="POST" enctype="multipart/form-data" id="reg-form">
               <div class="form-row">
                 <div class="col">

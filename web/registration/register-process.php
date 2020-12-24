@@ -67,7 +67,5 @@ if (empty($error)) {
   // }
 
 } else {
-  echo 'not valid';
+  echo 'not validated';
 }
-
-?>
