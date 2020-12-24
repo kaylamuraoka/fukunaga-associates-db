@@ -65,7 +65,7 @@
                 <div class="col">
                   <input type="password" required name="confirm_pwd" id="confirm_pwd" class="form-control"
                     placeholder="Confirm Password*">
-                  <small id="feedback"></small>
+                  <small id="pwd-validation"></small>
                 </div>
               </div>
 

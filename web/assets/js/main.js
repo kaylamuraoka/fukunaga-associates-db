@@ -22,59 +22,46 @@ $(document).ready(function (e) {
       invalidInput($(this));
     } else {
       // Input is valid
-      $(this).removeClass("is-invalid");
-      $(this).addClass("is-valid");
-      $(this).css("border-bottom", "1px solid green");
+      validInput($(this));
     }
   });
 
   $('#reg-form input[type="email"]').on("input", function () {
     if (!$(this).val().trim() || $(this).val().indexOf("@") < 0) {
       // Input field is empty
-      $(this).removeClass("is-valid");
-      $(this).addClass("is-invalid");
-      $(this).css("border-bottom", "1px solid red");
+      invalidInput($(this));
     } else {
       // Input is valid
-      $(this).removeClass("is-invalid");
-      $(this).addClass("is-valid");
-      $(this).css("border-bottom", "1px solid green");
+      validInput($(this));
     }
   });
 
-  $('#reg-form input[type="password"]').on("keyup", function () {
-    if ($("#password").val().trim() === $("#confirm_pwd").val().trim()) {
-      $("#pwd-validation").text("Passwords Match.").css("color", "green");
-    } else $("#pwd-validation").text("Passwords don't match.").css("color", "red");
-  });
+  $('#reg-form input[type="password"]').on("input", function () {
+    let $password = $("#password").val().trim();
+    let $confirm = $("#confirm_pwd").val().trim();
+    let $message = $("#pwd-validation");
 
-  // $("#confirm_pwd").focusout(function () {
-  //   let $password = $("#password").val().trim();
-  //   let $confirm = $("#confirm_pwd").val().trim();
-  //   if ($password != $confirm) {
-  //     // Input field is empty
-  //     $('#reg-form input[type="password"]').removeClass("is-valid");
-  //     $('#reg-form input[type="password"]').addClass("is-invalid");
-  //     $('#reg-form input[type="password"]').css(
-  //       "border-bottom",
-  //       "1px solid red"
-  //     );
-  //     $error.text("Passwords don't match.");
-  //     $error.removeClass("text-success");
-  //     $error.addClass("text-danger");
-  //   } else {
-  //     // Input is valid
-  //     $('#reg-form input[type="password"]').removeClass("is-invalid");
-  //     $('#reg-form input[type="password"]').addClass("is-valid");
-  //     $('#reg-form input[type="password"]').css(
-  //       "border-bottom",
-  //       "1px solid green"
-  //     );
-  //     $error.text("Passwords Match.");
-  //     $error.removeClass("text-danger");
-  //     $error.addClass("text-success");
-  //   }
-  // });
+    if ($password === $confirm && !$password && !$confirm) {
+      // Input is valid
+      validInput($(this));
+
+      $message.text("Passwords Match.");
+      $message.removeClass("text-danger");
+      $message.addClass("text-success");
+    } else if (!$(this).val().trim()) {
+      // No input yet
+      $message.text(
+        "Please enter a password with 8 or more characters (no spaces)."
+      );
+      $message.addClass("text-black-50");
+    } else {
+      invalidInput($(this));
+      // Input field is empty
+      $message.text("Passwords don't match.");
+      $message.removeClass("text-success");
+      $message.addClass("text-danger");
+    }
+  });
 });
 
 function readURL(input) {
