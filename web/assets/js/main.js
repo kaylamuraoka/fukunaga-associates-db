@@ -13,7 +13,9 @@ $(document).ready(function (e) {
       return true;
     } else {
       $password.addClass("is-invalid");
+      $password.css("border-bottom", "1px solid red");
       $confirm.addClass("is-invalid");
+      $password.css("border-bottom", "1px solid red");
       $error.text("Those passwords didn't match. Try again.");
       event.preventDefault();
     }
