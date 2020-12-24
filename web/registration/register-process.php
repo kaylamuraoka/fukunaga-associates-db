@@ -36,7 +36,34 @@ if (empty($confirm_pwd)) {
 };
 
 if (empty($error)) {
-  echo 'validate';
+  // register a new user
+  $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
+  require("../config/db.php");
+
+  // Make a query
+  $query = "INSERT INTO `users` (`userID`, `firstName`, `lastName`, `email`, `password`, `profileImg`, `createdAt`, `updatedAt`)";
+  $query = "VALUES ('',?,?,?,?,?,NOW(),NOW())";
+
+  // Initialize a statement
+  $q = mysqli_stmt_init($conn);
+
+  // Secure database from SQL injection
+  // Prepare SQL statement
+  mysqli_stmt_prepare($q, $query);
+
+  // Bind input text box values
+  mysqli_stmt_bind_param($q, 'sssss', $firstName, $lastName, $email, $hashed_pass, $profileImg);
+
+  // Execute statement
+  mysqli_stmt_execute($q);
+
+  // Check if successfully inserted
+  if(mysqli_stmt_affected_rows($q)==1){
+    print "record successfully inserted...!";
+  } else{
+    print "Error while registration...!";
+  }
+
 } else{
   echo 'not validated';
 }
