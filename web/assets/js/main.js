@@ -1,39 +1,17 @@
 $(document).ready(function (e) {
   let $uploadFile = $('#register .upload-profile-image input[type="file"]');
+  let $password = $("#password");
+  let $confirm = $("#confirm_pwd");
+  let $error = $("#confirm_error");
 
   $uploadFile.change(function () {
     readURL(this);
   });
 
   $("#reg-form").submit(function (event) {
-    let $password = $("#password");
-    let $confirm = $("#confirm_pwd");
-    let $error = $("#confirm_error");
-    if (
-      $password.val().trim() === $confirm.val().trim() &&
-      !$password.val().trim() &&
-      $confirm.val().trim()
-    ) {
-      // Input is valid
-      $password.removeClass("is-invalid");
-      $password.addClass("is-valid");
-      $password.css("border-bottom", "1px solid green");
-      $confirm.removeClass("is-invalid");
-      $confirm.addClass("is-valid");
-      $confirm.css("border-bottom", "1px solid green");
-      $error.addClass("text-success");
-      $error.text("Passwords Match!");
+    if ($password.val().trim() === $confirm.val().trim()) {
       return true;
     } else {
-      $password.addClass("is-invalid");
-      $password.css("border-bottom", "1px solid red");
-      $confirm.addClass("is-invalid");
-      $confirm.css("border-bottom", "1px solid red");
-      $error.addClass("text-success");
-      $error.text("Passwords don't match.");
-      // empty input values
-      $password.val("");
-      $confirm.val("");
       event.preventDefault();
     }
   });
@@ -44,7 +22,6 @@ $(document).ready(function (e) {
       $(this).removeClass("is-valid");
       $(this).addClass("is-invalid");
       $(this).css("border-bottom", "1px solid red");
-      $(this).val("");
     } else {
       // Input is valid
       $(this).removeClass("is-invalid");
@@ -59,12 +36,49 @@ $(document).ready(function (e) {
       $(this).removeClass("is-valid");
       $(this).addClass("is-invalid");
       $(this).css("border-bottom", "1px solid red");
-      $(this).val("");
     } else {
       // Input is valid
       $(this).removeClass("is-invalid");
       $(this).addClass("is-valid");
       $(this).css("border-bottom", "1px solid green");
+    }
+  });
+
+  $password.blur(function () {
+    if (
+      !$password.val().trim() ||
+      $password.val().trim() != $confirm.val().trim()
+    ) {
+      // Input field is empty
+      $password.removeClass("is-valid");
+      $password.addClass("is-invalid");
+      $password.css("border-bottom", "1px solid red");
+    } else {
+      // Input is valid
+      $password.removeClass("is-invalid");
+      $password.addClass("is-valid");
+      $password.css("border-bottom", "1px solid green");
+    }
+  });
+
+  $confirm.blur(function () {
+    if (
+      !$confirm.val().trim() ||
+      $password.val().trim() != $confirm.val().trim()
+    ) {
+      // Input field is empty
+      $(this).removeClass("is-valid");
+      $(this).addClass("is-invalid");
+      $(this).css("border-bottom", "1px solid red");
+      $error.addClass("text-danger");
+      $error.text("Passwords don't match.");
+    } else {
+      // Input is valid
+      $password.removeClass("is-invalid");
+      $password.addClass("is-valid");
+      $password.css("border-bottom", "1px solid green");
+      $error.addClass("text-success");
+      $error.text("Passwords Match!");
     }
   });
 });
