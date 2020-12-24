@@ -15,7 +15,6 @@ if ($conn -> connect_errno) {
   exit();
 } else {
   echo "Connected to database successfully.";
-  console.log("success");
 }
 
 // try{

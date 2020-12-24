@@ -67,7 +67,7 @@ $(document).ready(function (e) {
         "1px solid green"
       );
       $error.text("Passwords Match.");
-      $error.addClass("text-danger");
+      $error.addClass("text-success");
     }
   });
 });
