@@ -35,6 +35,8 @@ if (empty($confirm_pwd)) {
   $error[] = "You forgot to confirm your Password.";
 };
 
+$profileImg = 'image';
+
 if (empty($error)) {
   // register a new user
   $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
