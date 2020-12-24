@@ -13,9 +13,9 @@ $(document).ready(function (e) {
       return true;
     } else {
       $password.addClass("is-invalid");
-      $password.css("border", "1px solid red");
+      $password.css("border-bottom", "1px solid red");
       $confirm.addClass("is-invalid");
-      $confirm.css("border", "1px solid red");
+      $confirm.css("border-bottom", "1px solid red");
       $error.text("Those passwords didn't match. Try again.");
       // empty input values
       $password.val("");
@@ -26,9 +26,11 @@ $(document).ready(function (e) {
 
   $('#reg-form input[type="text"]').blur(function () {
     if (!$(this).val()) {
+      $(this).removeClass("is-valid");
       $(this).addClass("is-invalid");
     } else {
       $(this).removeClass("is-invalid");
+      $(this).addClass("is-valid");
     }
   });
 });
