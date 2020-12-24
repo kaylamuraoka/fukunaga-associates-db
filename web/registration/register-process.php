@@ -36,7 +36,7 @@ if (empty($confirm_pwd)) {
 };
 
 $files = $_FILES['profileUpload'];
-$profileImg = upload_profile('./../assets/images/profile/', $files);
+$profileImg = upload_profile('./assets/images/profile/', $files);
 
 if (empty($error)) {
   // register a new user
