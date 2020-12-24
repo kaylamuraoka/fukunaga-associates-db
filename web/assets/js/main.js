@@ -1,14 +1,13 @@
 $(document).ready(function (e) {
   let $uploadFile = $('#register .upload-profile-image input[type="file"]');
-  let $password = $("#password");
-  let $confirm = $("#confirm_pwd");
-  let $error = $("#pwd-validation");
 
   $uploadFile.change(function () {
     readURL(this);
   });
 
   $("#reg-form").submit(function (event) {
+    let $password = $("#password");
+    let $confirm = $("#confirm_pwd");
     if ($password.val().trim() === $confirm.val().trim()) {
       return true;
     } else {
@@ -47,8 +46,8 @@ $(document).ready(function (e) {
 
   $("#password, #confirm_pwd").on("keyup", function () {
     if ($("#password").val() == $("#confirm_pwd").val()) {
-      $("#pwd-validation").html("Passwords Match.").css("color", "green");
-    } else $("#pwd-validation").html("Passwords don't match.").css("color", "red");
+      $("#pwd-validation").text("Passwords Match.").css("color", "green");
+    } else $("#pwd-validation").text("Passwords don't match.").css("color", "red");
   });
 
   // $("#confirm_pwd").focusout(function () {
