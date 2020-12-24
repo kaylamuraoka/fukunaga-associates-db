@@ -59,9 +59,9 @@ if (empty($error)) {
 
   // Check if successfully inserted
   if(mysqli_stmt_affected_rows($q)==1){
-    print "record successfully inserted...!";
+    echo "record successfully inserted...!";
   } else{
-    print "Error while registration...!";
+    echo "Error while registration...!";
   }
 
 } else{
