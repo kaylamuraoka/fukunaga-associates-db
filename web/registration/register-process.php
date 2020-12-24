@@ -65,11 +65,11 @@ if (empty($error)) {
     header('location: ../login.php');
     exit();
   } else{
-    echo "Error while registration...!";
+    print "Error while registration...!";
   }
 
 } else{
-  echo 'not validated';
+  print 'not validated';
 }
 
 ?>
