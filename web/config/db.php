@@ -14,6 +14,8 @@ try {
   // encoded language
   mysqli_set_charset($conn, 'utf8');
 
+  echo "Connected to database successfully.";
+
 } catch (Exception $ex) {
   print "An Exception occurred. Message: ".$ex->getMessage();
 } catch (Error $e) {
