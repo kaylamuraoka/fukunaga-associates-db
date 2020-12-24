@@ -1,22 +1,80 @@
-<!-- The Page renders the content below -->
-<!DOCTYPE html>
-<html lang="en">
+<!-- Include the page header -->
+<?php
+  include('layouts/header.php');
+?>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
-  <!-- Bootstrap v4.5 stylesheet -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <!-- Font Awesome kit's code -->
-  <script src="https://kit.fontawesome.com/b7705bf7e8.js" crossorigin="anonymous"></script>
-</head>
-<!-- Custom stylesheet -->
-<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-</head>
+<!-- This Page renders the Login Form content below -->
+  <section id="login-form">
+    <div class="row m-0">
+        <div class="col-lg-4 offset-lg-2">
+          <div class="text-center pb-5">
+            <h1 class="login-title text-dark">Login</h1>
+            <p class="p-1 m-0 font-ubuntu text-black-50">Login and enjoy additional features</p>
+            <span class="font-ubuntu text-black-50">Create an <a href="register.php">Account</a></span>
+          </div>
+          <!-- Upload Photo Section -->
+          <div class="upload-profile-image d-flex justify-content-center pb-5">
+            <div class="text-center">
+              <img class="camera-icon" src="./assets/images/profile/default_avatar.png"></img>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <!-- Login Form -->
+            <form action="https://fukunaga-associates-db.herokuapp.com/register.php" method="POST" enctype="multipart/form-data" id="reg-form">
+              <div class="form-row">
+                <div class="col">
+                  <input type="text" value="<?php if(isset($_POST['firstName'])) echo $_POST['firstName']; ?>" required name="firstName" id="firstName" class="form-control"
+                    placeholder="First Name*">
+                </div>
+                <div class="col">
+                  <input type="text" value="<?php if(isset($_POST['lastName'])) echo $_POST['lastName']; ?>" required name="lastName" id="lastName" class="form-control"
+                    placeholder="Last Name*">
+                </div>
+              </div>
 
-<body>
+              <div class="form-row my-4">
+                <div class="col">
+                  <input type="email" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" required name="email" id="email" class="form-control" placeholder="Email*">
+                </div>
+              </div>
+
+              <div class="form-row my-4">
+                <div class="col">
+                  <input type="password" required name="password" id="password" class="form-control"
+                    placeholder="Password*">
+                  <small id="pwd-strength" class="text-danger">
+                    <ul>
+                      <!-- Insert any errors here -->
+                    </ul>
+                  </small>
+                </div>
+              </div>
+
+              <div class="form-row my-4">
+                <div class="col">
+                  <input type="password" required name="confirm_pwd" id="confirm_pwd" class="form-control"
+                    placeholder="Confirm Password*">
+                  <small id="pwd-validation"></small>
+                </div>
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input type="checkbox" name="agreement" class="form-check-input" required>
+                <label for="agreement" class="form-check-label font-ubuntu text-black-50">I agree to the <a
+                    href="#">terms and conditions</a> (*)</label>
+              </div>
+
+              <div class="submit-btn text-center my-5">
+                <button type="submit" class="btn btn-warning rounded-pill text-dark px-5">Continue</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+  </section>
+
   <div class="modal-dialog text-center">
     <div class="col-sm-8 main-section">
       <div class="modal-content">
@@ -45,14 +103,7 @@
     </div>
   </div>
 
-  <!-- jQuery and Bootstrap Bundle -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-      crossorigin="anonymous"></script>
-
-</body>
-
-</html>
+<!-- Include page footer -->
+<?php
+  include("layouts/footer.php");
+?>
