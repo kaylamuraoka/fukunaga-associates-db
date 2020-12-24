@@ -44,24 +44,23 @@ if (empty($error)) {
   require("config/db.php");
 
   // Make a query
-  $query = "INSERT INTO `users` (`userID`, `firstName`, `lastName`, `email`, `password`, `profileImg`, `createdAt`, `updatedAt`)";
-  $query = "VALUES ('',?,?,?,?,?,NOW(),NOW())";
+  $query = "INSERT INTO users (userID, firstName, lastName, email, password, profileImg, createdAt, updatedAt) VALUES ('',?,?,?,?,?,NOW(),NOW())";
 
   // Initialize a statement
-  $q = mysqli_stmt_init($conn);
+  $stmt = mysqli_stmt_init($conn);
 
   // Secure database from SQL injection
   // Prepare SQL statement
-  mysqli_stmt_prepare($q, $query);
+  mysqli_stmt_prepare($stmt, $query);
 
   // Bind input text box values
-  mysqli_stmt_bind_param($q, 'sssss', $firstName, $lastName, $email, $hashed_pass, $profileImg);
+  mysqli_stmt_bind_param($stmt, 'sssss', $firstName, $lastName, $email, $hashed_pass, $profileImg);
 
-  // Execute statement
-  mysqli_stmt_execute($q);
+  // Execute prepared statement
+  mysqli_stmt_execute($stmt);
 
   // Check if successfully inserted
-  if(mysqli_stmt_affected_rows($q)==1){
+  if(mysqli_stmt_affected_rows($stmt)==1){
     header('location: ../login.php');
     exit();
   } else{
