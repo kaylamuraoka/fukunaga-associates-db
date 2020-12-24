@@ -62,7 +62,8 @@ if (empty($error)) {
 
   // Check if successfully inserted
   if(mysqli_stmt_affected_rows($q)==1){
-    echo "record successfully inserted...!";
+    header('location: ../login.php');
+    exit();
   } else{
     echo "Error while registration...!";
   }
