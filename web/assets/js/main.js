@@ -24,8 +24,8 @@ $(document).ready(function (e) {
     }
   });
 
-  $('#reg-form input[type="text"]').blur(function () {
-    if (!$(this).val()) {
+  $('#reg-form input[type="text"] input[type="email"]').blur(function () {
+    if (!$(this).val().trim()) {
       $(this).removeClass("is-valid");
       $(this).addClass("is-invalid");
       $(this).css("border-bottom", "1px solid red");
