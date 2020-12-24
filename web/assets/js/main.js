@@ -42,7 +42,7 @@ $(document).ready(function (e) {
     }
   });
 
-  $("#password, #confirm_pwd").on("keyup", function () {
+  $('#reg-form input[type="password"]').on("keyup", function () {
     if ($("#password").val().trim() === $("#confirm_pwd").val().trim()) {
       $("#pwd-validation").text("Passwords Match.").css("color", "green");
     } else $("#pwd-validation").text("Passwords don't match.").css("color", "red");
