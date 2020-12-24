@@ -2,7 +2,7 @@ $(document).ready(function (e) {
   let $uploadFile = $('#register .upload-profile-image input[type="file"]');
   let $password = $("#password");
   let $confirm = $("#confirm_pwd");
-  let $error = $("#confirm_error");
+  let $error = $("#pwd-validation");
 
   $uploadFile.change(function () {
     readURL(this);
@@ -45,33 +45,39 @@ $(document).ready(function (e) {
     }
   });
 
-  $("#confirm_pwd").focusout(function () {
-    let $password = $("#password").val().trim();
-    let $confirm = $("#confirm_pwd").val().trim();
-    if ($password != $confirm) {
-      // Input field is empty
-      $('#reg-form input[type="password"]').removeClass("is-valid");
-      $('#reg-form input[type="password"]').addClass("is-invalid");
-      $('#reg-form input[type="password"]').css(
-        "border-bottom",
-        "1px solid red"
-      );
-      $error.text("Passwords don't match.");
-      $error.removeClass("text-success");
-      $error.addClass("text-danger");
-    } else {
-      // Input is valid
-      $('#reg-form input[type="password"]').removeClass("is-invalid");
-      $('#reg-form input[type="password"]').addClass("is-valid");
-      $('#reg-form input[type="password"]').css(
-        "border-bottom",
-        "1px solid green"
-      );
-      $error.text("Passwords Match.");
-      $error.removeClass("text-danger");
-      $error.addClass("text-success");
-    }
+  $("#password, #confirm_pwd").on("keyup", function () {
+    if ($("#password").val() == $("#confirm_pwd").val()) {
+      $("#pwd-validation").html("Passwords Match.").css("color", "green");
+    } else $("#pwd-validation").html("Passwords don't match.").css("color", "red");
   });
+
+  // $("#confirm_pwd").focusout(function () {
+  //   let $password = $("#password").val().trim();
+  //   let $confirm = $("#confirm_pwd").val().trim();
+  //   if ($password != $confirm) {
+  //     // Input field is empty
+  //     $('#reg-form input[type="password"]').removeClass("is-valid");
+  //     $('#reg-form input[type="password"]').addClass("is-invalid");
+  //     $('#reg-form input[type="password"]').css(
+  //       "border-bottom",
+  //       "1px solid red"
+  //     );
+  //     $error.text("Passwords don't match.");
+  //     $error.removeClass("text-success");
+  //     $error.addClass("text-danger");
+  //   } else {
+  //     // Input is valid
+  //     $('#reg-form input[type="password"]').removeClass("is-invalid");
+  //     $('#reg-form input[type="password"]').addClass("is-valid");
+  //     $('#reg-form input[type="password"]').css(
+  //       "border-bottom",
+  //       "1px solid green"
+  //     );
+  //     $error.text("Passwords Match.");
+  //     $error.removeClass("text-danger");
+  //     $error.addClass("text-success");
+  //   }
+  // });
 });
 
 function readURL(input) {
