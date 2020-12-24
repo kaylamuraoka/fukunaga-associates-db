@@ -7,15 +7,29 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);
 
-$conn = new mysqli($server, $username, $password, $db);
+try {
+  // Connection variable
+  $conn = new mysqli($server, $username, $password, $db);
 
-/* Attempt to connect to MySQL database */
-if ($conn -> connect_errno) {
-  echo "Failed to connect to MySQL: " . $conn -> connect_error;
-  exit();
-} else {
-  echo "Connected to database successfully.";
+  // encoded language
+  mysqli_set_charset($conn, 'utf8');
+
+} catch (Exception $ex) {
+  print "An Exception occurred. Message: ".$ex->getMessage();
+} catch (Error $e) {
+  print "The system is busy please try again later";
 }
+
+// // Connection variable
+// $conn = new mysqli($server, $username, $password, $db);
+
+// /* Attempt to connect to MySQL database */
+// if ($conn -> connect_errno) {
+//   echo "Failed to connect to MySQL: " . $conn -> connect_error;
+//   exit();
+// } else {
+//   echo "Connected to database successfully.";
+// }
 
 // try{
    
