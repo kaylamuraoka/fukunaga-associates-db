@@ -27,12 +27,12 @@ function validate_input_email($emailValue){
 }
 
 // profile image
-function upload_profile($path, $filename){
+function upload_profile($path, $file){
   $targetDir = $path;
   $default = "default_avatar.png";
 
   // get filename
-  $filename = basename($filename['name']);
+  $filename = basename($file['name']);
   $targetFilePath = $targetDir.$filename;
   // Returns extension of uploaded image
   $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
@@ -43,7 +43,7 @@ function upload_profile($path, $filename){
 
     if(in_array($fileType, $allowType)){
       // upload file to the server
-      if(move_uploaded_file($filename['tmp_name'], $targetFilePath)){
+      if(move_uploaded_file($file['tmp_name'], $targetFilePath)){
         return $targetFilePath;
       }
     }
