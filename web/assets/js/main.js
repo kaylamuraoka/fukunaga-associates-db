@@ -45,35 +45,26 @@ $(document).ready(function (e) {
     }
   });
 
-  $password.change(function () {
-    if (
-      !$password.val().trim() ||
-      $password.val().trim() != $confirm.val().trim()
-    ) {
-      // Input field is empty
-      $password.removeClass("is-valid");
-      $password.addClass("is-invalid");
-      $password.css("border-bottom", "1px solid red");
-    } else {
-      // Input is valid
-      $password.removeClass("is-invalid");
-      $password.addClass("is-valid");
-      $password.css("border-bottom", "1px solid green");
-    }
-  });
-
   $confirm.blur(function () {
     if (
       !$confirm.val().trim() ||
       $password.val().trim() != $confirm.val().trim()
     ) {
       // Input field is empty
+      $password.removeClass("is-valid");
+      $password.addClass("is-invalid");
+      $password.css("border-bottom", "1px solid red");
+
       $confirm.removeClass("is-valid");
       $confirm.addClass("is-invalid");
       $confirm.css("border-bottom", "1px solid red");
       $error.text("Passwords don't match.");
     } else {
       // Input is valid
+      $password.removeClass("is-invalid");
+      $password.addClass("is-valid");
+      $password.css("border-bottom", "1px solid green");
+
       $confirm.removeClass("is-invalid");
       $confirm.addClass("is-valid");
       $confirm.css("border-bottom", "1px solid green");
