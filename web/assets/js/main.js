@@ -16,7 +16,8 @@ $(document).ready(function (e) {
     }
   });
 
-  $('#reg-form input[type="text"]').blur(function () {
+  // To add a validity test to all text input elements:
+  $('#reg-form input[type="text"]').change(function () {
     if (!$(this).val().trim()) {
       // Input field is empty
       $(this).removeClass("is-valid");
@@ -44,7 +45,7 @@ $(document).ready(function (e) {
     }
   });
 
-  $password.blur(function () {
+  $password.change(function () {
     if (
       !$password.val().trim() ||
       $password.val().trim() != $confirm.val().trim()
