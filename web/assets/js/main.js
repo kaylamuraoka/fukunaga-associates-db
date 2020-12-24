@@ -17,7 +17,18 @@ $(document).ready(function (e) {
       $confirm.addClass("is-invalid");
       $confirm.css("border", "1px solid red");
       $error.text("Those passwords didn't match. Try again.");
+      // empty input values
+      $password.val("");
+      $confirm.val("");
       event.preventDefault();
+    }
+  });
+
+  $('#reg-form input[type="text"]').blur(function () {
+    if (!$(this).val()) {
+      $(this).addClass("is-invalid");
+    } else {
+      $(this).removeClass("is-invalid");
     }
   });
 });
