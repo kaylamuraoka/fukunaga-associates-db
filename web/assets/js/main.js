@@ -17,7 +17,7 @@ $(document).ready(function (e) {
   });
 
   // To add a validity test to all text input elements:
-  $('#reg-form input[type="text"]').change(function () {
+  $('#reg-form input[type="text"]').on("input", function () {
     if (!$(this).val().trim()) {
       // Input field is empty
       $(this).removeClass("is-valid");
