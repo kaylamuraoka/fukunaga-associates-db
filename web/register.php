@@ -1,8 +1,5 @@
 <!-- Include the page header -->
 <?php
-  include('config/db.php');
-?>
-<?php
   include('layouts/header.php');
 ?>
 
