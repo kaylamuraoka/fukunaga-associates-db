@@ -35,7 +35,8 @@ if (empty($confirm_pwd)) {
   $error[] = "You forgot to confirm your Password.";
 };
 
-$profileImg = 'image';
+$files = $_FILES['profileUpload'];
+$profileImg = upload_profile('./../assets/images/profile/', $files);
 
 if (empty($error)) {
   // register a new user
