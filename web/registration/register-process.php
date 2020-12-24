@@ -35,29 +35,29 @@ if (empty($confirm_pwd)) {
   $error[] = "You forgot to confirm your Password.";
 };
 
-$profileImage = 'image';
+// $profileImage = 'image';
 
 if (empty($error)) {
   echo 'validate';
-  // // There is no errors
-  // // Register a new user
+  // There is no errors
+  // Register a new user
   // $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
   // require("../config/db.php");
 
-  // // Make a query
+  // Make a query
   // $query = "INSERT INTO users (userID, firstName, lastName, email, password, profileImg, createdAt, updatedAt)";
   // $query = "VALUES('', ?, ?, ?, ?, ?, NOW(), NOW())";
 
-  // // Initialize a statement
+  // Initialize a statement
   // $q = mysqli_stmt_init($conn);
 
-  // // Prepare sql statement
+  // Prepare sql statement
   // mysqli_stmt_prepare($q, $query);
 
-  // // Bind values with statement
+  // Bind values with statement
   // mysqli_stmt_bind_param($q, 'sssss', $firstName, $lastName, $email, $hashed_pass, $profileImage);
 
-  // // Execute statement
+  // Execute statement
   // mysqli_stmt_execute($q);
 
   // if (mysqli_stmt_affected_rows($q) == 1) {
