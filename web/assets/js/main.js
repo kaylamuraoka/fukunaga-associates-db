@@ -45,22 +45,27 @@ $(document).ready(function (e) {
     }
   });
 
-  $('#reg-form input[type="password"]').on("input", function () {
-    if (
-      !$(this).val().trim() ||
-      $password.val().trim() != $confirm.val().trim()
-    ) {
+  $("#confirm_pwd").focusout(function () {
+    let $password = $("#password").val().trim();
+    let $confirm = $("#confirm_pwd").val().trim();
+    if ($password != $confirm) {
       // Input field is empty
-      $(this).removeClass("is-valid");
-      $(this).addClass("is-invalid");
-      $(this).css("border-bottom", "1px solid red");
+      $('#reg-form input[type="password"]').removeClass("is-valid");
+      $('#reg-form input[type="password"]').addClass("is-invalid");
+      $('#reg-form input[type="password"]').css(
+        "border-bottom",
+        "1px solid red"
+      );
       $error.text("Passwords don't match.");
       $error.addClass("text-danger");
     } else {
       // Input is valid
-      this.removeClass("is-invalid");
-      $(this).addClass("is-valid");
-      $(this).css("border-bottom", "1px solid green");
+      $('#reg-form input[type="password"]').removeClass("is-invalid");
+      $('#reg-form input[type="password"]').addClass("is-valid");
+      $('#reg-form input[type="password"]').css(
+        "border-bottom",
+        "1px solid green"
+      );
       $error.text("Passwords Match.");
       $error.addClass("text-danger");
     }
