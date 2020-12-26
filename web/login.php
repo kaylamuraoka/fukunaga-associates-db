@@ -20,7 +20,7 @@
           </div>
           <div class="d-flex justify-content-center">
             <!-- Login Form -->
-            <form action="https://fukunaga-associates-db.herokuapp.com/register.php" method="POST" enctype="multipart/form-data" id="reg-form">
+            <form action="https://fukunaga-associates-db.herokuapp.com/login.php" method="POST" enctype="multipart/form-data" id="reg-form">
               <div class="form-row">
                 <div class="col">
                   <input type="text" value="<?php if(isset($_POST['firstName'])) echo $_POST['firstName']; ?>" required name="firstName" id="firstName" class="form-control"
