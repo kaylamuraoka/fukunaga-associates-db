@@ -28,18 +28,16 @@ if(isset($_SESSION['userID'])){
               ?>
             </h4>
           </div>
+        </div>
           
-          <div class="user-info px-3">
-            <ul class="font-ubuntu navbar-nav">
-              <li class="nav-link"><b>First Name: </b><span><?php echo isset($user['firstName']) ? $user['firstName']:'';?></span></li>
-              <li class="nav-link"><b>Last Name: </b><span><?php echo isset($user['lastName']) ? $user['lastName']:'';?></span></li>
-              <li class="nav-link"><b>Email: </b><span><?php echo isset($user['email']) ? $user['email']:'';?></span></li>
-            </ul>
-          </div>
-          
+        <div class="user-info px-3">
+          <ul class="font-ubuntu navbar-nav">
+            <li class="nav-link"><b>First Name: </b><span><?php echo isset($user['firstName']) ? $user['firstName']:'';?></span></li>
+            <li class="nav-link"><b>Last Name: </b><span><?php echo isset($user['lastName']) ? $user['lastName']:'';?></span></li>
+            <li class="nav-link"><b>Email: </b><span><?php echo isset($user['email']) ? $user['email']:'';?></span></li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 </section>
-print "Welcome";
