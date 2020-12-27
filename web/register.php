@@ -25,7 +25,7 @@
               <div class="d-flex justify-content-center">
                 <i class="fas fa-camera camera-icon"></i>
               </div>
-              <img src="../assets/images/profile/default_avatar.png" style="width:200px; height:200px"
+              <img src="../assets/images/profile/default_avatar.png" style="width:auto; height:200px"
                 class="img rounded-circle" alt="profile">
               <small class="form-text text-black-50">Choose Image</small>
               <input type="file" form="reg-form" class="form-control-file" name="profileUpload" id="upload-profile">
