@@ -43,28 +43,31 @@ $(document).ready(function (e) {
 
   // Validate password is strong
   $("#password").on("input", function () {
-    $errors = [];
     // Validate the length
     if ($("#password").val().length < 8) {
-      $errors.push("Your password must be at least 8 characters long.");
+      $("#pwd-validation").append(
+        "<p>Your password must be at least 8 characters long.</p>"
+      );
       invalidInput($("#password"));
     }
 
     // Validate letter
     if ($("#password").match(/[a-z]/)) {
     } else {
-      $errors.push("Your password must have at least one letter.");
+      $("#pwd-validation").append(
+        "<p>Your password must have at least one letter.</p>"
+      );
+      invalidInput($("#password"));
     }
 
     // Validate number
     if ($("#password").match(/\d/)) {
     } else {
-      $errors.push("Your password must have at least one number.");
+      $("#pwd-validation").append(
+        "Your password must have at least one number."
+      );
+      invalidInput($("#password"));
     }
-
-    $.each($errors, function (index, error) {
-      $("#pwd-strength ul").append(`<li>${error}</li>`);
-    });
   });
 
   $("#password, #confirm_pwd").on("keyup", function () {
