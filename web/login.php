@@ -10,7 +10,7 @@
           <div class="text-center pb-5">
             <h1 class="login-title text-dark">Login</h1>
             <p class="p-1 m-0 font-ubuntu text-black-50">Login and enjoy additional features</p>
-            <span class="font-ubuntu text-black-50">Create an <a href="register.php">Account</a></span>
+            <span class="font-ubuntu text-black-50">Create an <a href="register.php">account</a></span>
           </div>
           <!-- Upload Photo Section -->
           <div class="upload-profile-image d-flex justify-content-center pb-5">
