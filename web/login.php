@@ -1,6 +1,20 @@
 <!-- Include the page header -->
 <?php
   include('layouts/header.php');
+  include('registration/helper.php');
+?>
+
+<?php
+$user = array();
+require('config/db.php');
+
+if(isset($_SESSION['userID'])){
+  $user = get_user_info($conn, $_SESSION['userID']);
+}
+
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+  require('login/login-process.php');
+}
 ?>
 
 <!-- This Page renders the Login Form content below -->
@@ -15,7 +29,7 @@
           <!-- Upload Photo Section -->
           <div class="upload-profile-image d-flex justify-content-center pb-5">
             <div class="text-center">
-              <img src="../assets/images/profile/default_avatar.png" style="width:200px; height:200px"
+              <img src="<?php echo isset($user['profileImg']) ? $user['profileImg']:'./assets/images/profile/default_avatar.png';?>" style="width:200px; height:200px"
                 class="img rounded-circle" alt="profile">
             </div>
           </div>

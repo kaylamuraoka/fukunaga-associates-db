@@ -61,6 +61,12 @@ if (empty($error)) {
 
   // Check if successfully inserted
   if(mysqli_stmt_affected_rows($stmt)==1){
+    // start a new session
+    session_start();
+
+    // create session variable
+    $_SESSION['userID'] = mysqli_insert_id($conn);
+    
     header('location: ../login.php');
     exit();
   } else{
