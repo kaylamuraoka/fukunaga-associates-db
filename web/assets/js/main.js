@@ -44,28 +44,26 @@ $(document).ready(function (e) {
   // Validate password is strong
   $("#password").on("input", function () {
     // Validate the length
-    if ($("#password").val().length < 8) {
-      $("#pwd-validation").append(
+    if ($(this).val().length < 8) {
+      $("#pwd-strength").append(
         "<p>Your password must be at least 8 characters long.</p>"
       );
       invalidInput($("#password"));
     }
 
     // Validate letter
-    if ($("#password").match(/[a-z]/)) {
+    if ($(this).val().match(/[a-z]/)) {
     } else {
-      $("#pwd-validation").append(
+      $("#pwd-strength").append(
         "<p>Your password must have at least one letter.</p>"
       );
       invalidInput($("#password"));
     }
 
     // Validate number
-    if ($("#password").match(/\d/)) {
+    if ($(this).val().match(/\d/)) {
     } else {
-      $("#pwd-validation").append(
-        "Your password must have at least one number."
-      );
+      $("#pwd-strength").append("Your password must have at least one number.");
       invalidInput($("#password"));
     }
   });
