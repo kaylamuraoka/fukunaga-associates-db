@@ -96,12 +96,10 @@ $(document).ready(function (e) {
     if ($("#password").val() == $("#confirm_pwd").val()) {
       // Input is valid
       $("#pwd-validation").html("Passwords Match.").css("color", "green");
-      validInput($("#password"));
       validInput($("#confirm_pwd"));
     } else {
       // Input is invalid
       $("#pwd-validation").html("Passwords don't match.").css("color", "red");
-      invalidInput($("#password"));
       invalidInput($("#confirm_pwd"));
     }
   });
