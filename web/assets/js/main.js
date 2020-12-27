@@ -11,8 +11,9 @@ $(document).ready(function (e) {
     if (
       $password === $confirm &&
       $password.length > 8 &&
-      $password.match(/[a-z]/) &&
-      $password.match(/\d/)
+      $password.match(/\d/) &&
+      $password.match(/[A-Z]/) &&
+      $password.indexOf(" ") < 0
     ) {
       return true;
     } else {
@@ -45,25 +46,48 @@ $(document).ready(function (e) {
   $("#password").on("input", function () {
     // Validate the length
     if ($(this).val().length < 8) {
-      $("#pwd-strength").append(
-        "<p>Your password must be at least 8 characters long.</p>"
-      );
+      $("#pwdLength").css("color", "red");
+      passwordFail($("#lengthCheck"));
       invalidInput($("#password"));
+    } else {
+      $("#pwdLength").css("color", "green");
+      passwordPass($("#lengthCheck"));
+      validInput($("#password"));
     }
 
-    // Validate letter
-    if ($(this).val().match(/[a-z]/)) {
+    // Check for spaces
+    if ($(this).val().indexOf(" ") >= 0) {
+      // contains spaces
+      $("#pwdSpaces").css("color", "red");
+      passwordFail($("#spacesCheck"));
+      invalidInput($("#password"));
     } else {
-      $("#pwd-strength").append(
-        "<p>Your password must have at least one letter.</p>"
-      );
+      $("#pwdSpaces").css("color", "green");
+      passwordPass($("#spacesCheck"));
+      validInput($("#password"));
+    }
+
+    // Validate capital letter
+    if ($(this).val().match(/[A-Z]/)) {
+      // has a capital letter
+      $("#pwdCapital").css("color", "green");
+      passwordPass($("#capCheck"));
+      validInput($("#password"));
+    } else {
+      $("#pwdCapital").css("color", "red");
+      passwordFail($("#capCheck"));
       invalidInput($("#password"));
     }
 
     // Validate number
     if ($(this).val().match(/\d/)) {
+      // has at least one number
+      $("#pwdNum").css("color", "green");
+      passwordPass($("#numCheck"));
+      validInput($("#password"));
     } else {
-      $("#pwd-strength").append("Your password must have at least one number.");
+      $("#pwdNum").css("color", "red");
+      passwordFail($("#numCheck"));
       invalidInput($("#password"));
     }
   });
@@ -103,4 +127,12 @@ function invalidInput(element) {
 function validInput(element) {
   element.removeClass("is-invalid").addClass("is-valid");
   element.css("border-bottom", "1px solid green");
+}
+
+function passwordPass(element) {
+  element.addClass("fas fa-check-circle").css("color", "green");
+}
+
+function passwordFail(element) {
+  element.addClass("fas fa-times-circle").css("color", "red");
 }
