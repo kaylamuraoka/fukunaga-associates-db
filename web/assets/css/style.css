@@ -9,9 +9,14 @@
   font: normal 400 16px var(--font-ubuntu);
 }
 
-#register {
+#register,
+#login {
   padding: 5% 0;
   background-color: white;
+}
+
+#login {
+  padding: 10% 0;
 }
 
 #register .upload-profile-image {
@@ -61,7 +66,10 @@
 
 #reg-form input[type="text"],
 #reg-form input[type="email"],
-#reg-form input[type="password"] {
+#reg-form input[type="password"],
+#log-form input[type="text"],
+#log-form input[type="email"],
+#log-form input[type="password"] {
   border: none;
   border-radius: unset;
   border-bottom: 1px solid var(--color-border);
@@ -70,7 +78,10 @@
 
 #reg-form input[type="text"],
 #reg-form input[type="email"],
-#reg-form input[type="password"] {
+#reg-form input[type="password"],
+#log-form input[type="text"],
+#log-form input[type="email"],
+#log-form input[type="password"] {
   outline: none;
   box-shadow: none;
 }

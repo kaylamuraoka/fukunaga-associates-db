@@ -12,7 +12,7 @@
 <!-- registration area -->
     <section id="register">
       <div class="row m-0">
-        <div class="col-lg-4 offset-lg-2">
+        <div class="col-lg-12">
           <div class="text-center pb-5">
             <h1 class="login-title text-dark">Create an Account</h1>
             <p class="p-1 m-0 font-ubuntu text-black-50">Please enter your name, email address and password to create an
