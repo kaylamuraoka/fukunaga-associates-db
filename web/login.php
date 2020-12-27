@@ -41,14 +41,6 @@
                 </div>
               </div>
 
-              <div class="form-row my-4">
-                <div class="col">
-                  <input type="password" required name="confirm_pwd" id="confirm_pwd" class="form-control"
-                    placeholder="Confirm Password*">
-                  <small id="pwd-validation"></small>
-                </div>
-              </div>
-
               <div class="submit-btn text-center my-5">
                 <button type="submit" class="btn btn-warning rounded-pill text-dark px-5">Login</button>
               </div>
