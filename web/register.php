@@ -56,7 +56,7 @@
                   <input type="password" required name="password" id="password" class="form-control"
                     placeholder="Password*">
                     <small class="text-black-50">Password must meet the following requirements:</small>
-                    <small id="pwdLength"><i id="lengthCheck" class="fas fa-check"></i>8-20 characters</small>
+                    <small id="pwdLength"><i id="lengthCheck"></i>8-20 characters</small>
                     <small id="pwdCapital"><i id="capCheck" class="fas fa-check"></i>At least one capital letter</small>
                     <small id="pwdNum"><i id="numCheck" class="fas fa-check"></i>At least one number</small>
                     <small id="pwdSpaces"><i id="spacesCheck" class="fas fa-check"></i>No spaces</small>
