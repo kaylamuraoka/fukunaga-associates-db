@@ -59,7 +59,6 @@
                     <small id="pwdLength"><i id="lengthCheck"></i> 8-20 characters</small><br>
                     <small id="pwdCapital"><i id="capCheck"></i> At least one capital letter</small><br>
                     <small id="pwdNum"><i id="numCheck"></i> At least one number</small><br>
-                    <small id="pwdSpecial"><i id="specialCheck"></i> At least one special character</small><br>
                     <small id="pwdSpaces"><i id="spacesCheck"></i> No spaces</small><br>
                 </div>
               </div>
