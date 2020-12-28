@@ -15,7 +15,7 @@ function validate_input_text($textValue){
 
 function validate_input_email($emailValue){
   // if variable is not empty
-    // remove white spaces before and after text 
+  // remove white spaces before and after text 
   if(!empty($emailValue)){
     $trim_text = trim($emailValue);
     // remove illegal characters from text
