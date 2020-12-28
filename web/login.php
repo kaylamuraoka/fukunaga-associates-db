@@ -47,11 +47,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="col">
                   <input type="password" required name="password" id="password" class="form-control"
                     placeholder="Password">
-                  <small id="pwd-strength" class="text-danger">
-                    <ul>
-                      <!-- Insert any errors here -->
-                    </ul>
-                  </small>
                 </div>
               </div>
 
