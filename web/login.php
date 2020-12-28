@@ -13,7 +13,7 @@ if(isset($_SESSION['userID'])){
 }
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-  require('login/login-process.php');
+  require('registration/login-process.php');
 }
 ?>
 
