@@ -8,12 +8,14 @@ $(document).ready(function (e) {
   $("#reg-form").submit(function (event) {
     let $password = $("#password").val();
     let $confirm = $("#confirm_pwd").val();
+    // Validate password meets all specified requirements
     if (
       $password === $confirm &&
       $password.length > 8 &&
       $password.match(/\d/) &&
       $password.match(/[A-Z]/) &&
-      $password.indexOf(" ") < 0
+      $password.indexOf(" ") < 0 &&
+      $password.match(/[!,%,&,@,#,$,^,*,?,_,~]/)
     ) {
       return true;
     } else {
@@ -88,6 +90,22 @@ $(document).ready(function (e) {
     } else {
       $("#pwdNum").css("color", "red");
       passwordFail($("#numCheck"));
+      invalidInput($("#password"));
+    }
+
+    // Validate that password contains special characters
+    if (
+      $(this)
+        .val()
+        .match(/[!,%,&,@,#,$,^,*,?,_,~]/)
+    ) {
+      // has at least one special character
+      $("#pwdSpecial").css("color", "green");
+      passwordPass($("#specialCheck"));
+      validInput($("#password"));
+    } else {
+      $("#pwdSpecial").css("color", "red");
+      passwordFail($("#specialCheck"));
       invalidInput($("#password"));
     }
   });
