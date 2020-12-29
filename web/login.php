@@ -18,7 +18,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!-- This Page renders the Login Form content below -->
- <section id="login">
   <div class="modal-dialog text-center">
     <div class="col-sm-10 col-md-9 col-lg-8 main-section">
       <div class="modal-content">
@@ -61,7 +60,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
       </div>
     </div>
   </div>
-</section>
 
 <!-- Include page footer -->
 <?php
