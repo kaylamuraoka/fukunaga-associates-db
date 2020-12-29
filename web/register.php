@@ -80,9 +80,7 @@
           </div>
 
           <!-- Submit button -->
-          <div class="submit-btn">
             <button type="submit" class="btn btn-warning rounded-pill text-dark px-5">Register</button>
-          </div>
 
           <p class="font-ubuntu text-black-50">Already have an account? <a class="link" href="login.php">Login</a></p>
 

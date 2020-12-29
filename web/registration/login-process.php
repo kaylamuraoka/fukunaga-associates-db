@@ -37,7 +37,7 @@ if(empty($error)){
   if(!empty($row)) {
     // Verify password
     if(password_verify($password, $row['password'])) {
-      header("location: home.php");
+      header("location: index.php");
       exit();
     }
   } else{
