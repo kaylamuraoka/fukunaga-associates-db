@@ -1,7 +1,7 @@
 <?php
 
 $error = array();
-
+$errors = array(); 
 // Validate Email Address Input
 $email = validate_input_email($_POST['email']);
 if (empty($email)) {
@@ -41,9 +41,8 @@ if(empty($error)){
       exit();
     }
   } else{
-    print "You are not a member please register";
+    array_push($errors, "You are not a member, please register");
   }
-
 } else {
-  echo "Please fill out your email and password to login";
+  array_push($errors, "Please fill out your email and password to login");
 }

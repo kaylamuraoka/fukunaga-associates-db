@@ -26,6 +26,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <h1 class="login-title text-light">Login</h1>
         <form action="https://fukunaga-associates-db.herokuapp.com/login.php" method="POST" enctype="multipart/form-data" id="log-form">
+          <?php include('registration/errors.php'); ?>
           <!-- Email Input Fields -->
           <div class="form-group">
             <i class="fas fa-envelope"></i>
