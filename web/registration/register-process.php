@@ -64,7 +64,6 @@ if (empty($error)) {
   if ($row > 0 ) {
     // if $row is greater than 0, (means the email exists)
     array_push($errors, "Email already exists, you can try logging in with this email address.");
-    echo "Error: email already exists";
   }
   else {
     // Make a query
@@ -95,11 +94,11 @@ if (empty($error)) {
       exit();
     } else { 
       // Error while registration
-      print "Error while registration...!";
+      array_push($errors, "Error while registration...!");
     }
   }
 } else{
-  print 'not validated';
+  array_push($errors, "Not validated");
 }
 
 ?>
