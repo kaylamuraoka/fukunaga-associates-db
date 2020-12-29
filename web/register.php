@@ -80,7 +80,7 @@
           </div>
 
           <!-- Submit button -->
-          <div class="submit-btn text-center my-5">
+          <div class="submit-btn">
             <button type="submit" class="btn btn-warning rounded-pill text-dark px-5">Register</button>
           </div>
 
