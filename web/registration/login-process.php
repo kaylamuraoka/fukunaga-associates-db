@@ -6,14 +6,14 @@ $errors = array();
 $email = validate_input_email($_POST['email']);
 if (empty($email)) {
   $error[] = "You forgot to enter your Email.";
-  array_push($errors, "You forgot to enter your Email.");
+  array_push($errors, "Email is required.");
 };
 
 // Validate Password Input
 $password = validate_input_text($_POST['logPassword']);
 if (empty($password)) {
   $error[] = "You forgot to enter your password.";
-  array_push($errors, "You forgot to enter your password.");
+  array_push($errors, "Password is required.");
 };
 
 if(empty($error)){
@@ -39,11 +39,15 @@ if(empty($error)){
   if(!empty($row)) {
     // Verify password
     if(password_verify($password, $row['password'])) {
+      // password is correct
       header("location: index.php");
       exit();
+    } else{
+      // password is incorrect
+      array_push($errors, "You are not a member, please register");
     }
   } else{
-    array_push($errors, "You are not a member, please register");
+    array_push($errors, "The email or password you entered is incorrect.");
   }
 } else {
   array_push($errors, "Please fill out your email and password to login");
