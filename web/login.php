@@ -34,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
           <!-- Password Input Fields -->
           <div class="form-group">
             <i class="fas fa-lock"></i>
-            <input type="password" required name="password" id="password" class="form-control" placeholder="Password">
+            <input type="password" required name="logPassword" id="logPassword" class="form-control" placeholder="Password">
             <!-- Forgot Password Link -->
             <div class="row">
               <div class="col float-left">
