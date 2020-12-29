@@ -51,9 +51,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
           </div>
           <!-- Login Button -->
-          <div class="submit-btn text-center my-5">
-            <button type="submit" name="login-btn" class="btn"><i class="fas fa-sign-in-alt icon"></i>Sign In</button>
-          </div>
+          <button type="submit" name="login-btn" class="btn"><i class="fas fa-sign-in-alt icon"></i>Sign In</button>
         </form>
         <!-- Create an account -->
         <p class="font-ubuntu text-black-50">Don't have an account? <a class="link" href="register.php">Sign Up</a></p>
