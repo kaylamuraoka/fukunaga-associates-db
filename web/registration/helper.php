@@ -73,5 +73,4 @@ function get_user_info($conn, $userID){
 
   $row = mysqli_fetch_array($result);
   return empty($row) ? false : $row;
-  print $row;
 }

@@ -37,8 +37,14 @@ if(empty($error)){
   if(!empty($row)) {
     // Verify password
     if(password_verify($password, $row['password'])) {
-      // password is correct
+      // Password is correct, so start a new session
+      session_start();
+
+      // Store data in session variables
+      $_SESSION["loggedin"] = true;
       $_SESSION['userID'] = $row['userID'];
+      
+      // Redirect user to home page
       header("location: index.php");
       exit();
     } else{
@@ -46,7 +52,7 @@ if(empty($error)){
       array_push($errors, "The email or password you entered is incorrect.");
     }
   } else{
-    array_push($errors, "You are not a member, please register");
+    array_push($errors, "No account found with that email.");
   }
 } else {
   array_push($errors, "Please fill out your email and password to login");
