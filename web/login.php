@@ -61,7 +61,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   </section>
 
-  <div class="modal-dialog text-center">
+  <div class="container text-center">
     <div class="col-sm-8 main-section">
       <div class="modal-content">
         <div class="col-12 user-img">
