@@ -31,11 +31,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
           <div class="form-group">
             <i class="fas fa-envelope"></i>
             <input type="email" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" required name="email" id="email" class="form-control" placeholder="Email">
+            <small id="email-error" class="text-danger hide"></small>
           </div>
           <!-- Password Input Fields -->
           <div class="form-group">
             <i class="fas fa-lock"></i>
             <input type="password" required name="logPassword" id="logPassword" class="form-control" placeholder="Password">
+            <small id="pwd-error" class="text-danger hide"></small>
             <!-- Forgot Password Link -->
             <div class="row">
               <div class="col float-left">
@@ -45,7 +47,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
               </div>
               <div class="col float-right">
-                  <a class="link font-weight-bold" href="#">Forgot Password?</a>
+                <a class="link font-weight-bold" href="#">Forgot Password?</a>
               </div>  
             </div>
           </div>
