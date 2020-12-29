@@ -104,7 +104,6 @@ $(document).ready(function (e) {
       invalidInput($("#confirm_pwd"));
     }
   });
-
 });
 
 function readURL(input) {
