@@ -9,8 +9,6 @@ $user = array();
 if(isset($_SESSION['userID'])){
   require('config/db.php');
   $user = get_user_info($conn, $_SESSION['userID']);
-} else {
-  header('location: login.php');
 }
 
 ?>
