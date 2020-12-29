@@ -44,8 +44,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                   <label for="rememberMe" class="form-check-label font-ubuntu text-light font-weight-bold">Remember me</label>
                 </div>
               </div>
-              <div class="col float-right">
-                <a class="link font-weight-bold" href="#">Forgot Password?</a>
+              <div class="col float-right pt-1">
+                <p><a class="link font-weight-bold" href="registration/enter_email.php">Forgot your password?</a></p>
               </div>  
             </div>
           </div>
