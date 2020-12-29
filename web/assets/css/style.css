@@ -162,15 +162,8 @@ button {
   margin-right: 7px;
 }
 
-.forgot,
 .link {
-  padding: 5px 0 25px;
-}
-
-.forgot a,
-.link a {
   color: #c2fbfe !important;
-  font-weight: bold;
 }
 
 /* Media queries for responsive font sizes*/

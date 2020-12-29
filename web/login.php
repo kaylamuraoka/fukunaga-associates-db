@@ -36,17 +36,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             <i class="fas fa-lock"></i>
             <input type="password" required name="password" id="password" class="form-control" placeholder="Password">
             <!-- Forgot Password Link -->
-            <div class="row forgot">
+            <div class="row">
               <div class="col float-left">
                 <div class="form-check form-check-inline">
                   <input type="checkbox" name="rememberMe" class="form-check-input">
-                  <label for="rememberMe" class="form-check-label font-ubuntu text-black-50">Remember me</label>
+                  <label for="rememberMe" class="form-check-label font-ubuntu text-light font-weight-bold">Remember me</label>
                 </div>
               </div>
               <div class="col float-right">
-                <div class="forgot">
-                  <a>Forgot Password?</a>
-                </div>
+                  <a class="link font-weight-bold" href="#">Forgot Password?</a>
               </div>  
             </div>
           </div>
