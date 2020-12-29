@@ -24,12 +24,13 @@ if(isset($_SESSION['userID'])){
           <div class="text-center">
             <img class="img rounded-circle" style="width: 200px; height: 200px;" src="<?php echo isset($user['profileImg']) ? $user['profileImg']:'./assets/images/profile/default_avatar.png';?>" alt="profile">
             <h4 class="py-3">
-              <p>Welcome back, <?=$user['firstName'], $user['lastName']?>!</p>
+              <h5>Welcome back, 
               <?php
               if(isset($user['firstName'])){
               printf('%s %s', $user['firstName'], $user['lastName']);
               }
               ?>
+              </h5>
             </h4>
           </div>
         </div>
