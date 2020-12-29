@@ -62,12 +62,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
   </section>
 
   <div class="container text-center">
-    <div class="col-sm-8 main-section">
+    <div class="col-sm-10 main-section">
       <div class="modal-content">
         <div class="col-12 user-img">
-          <img src="./../images/user-avatar.jpg">
+          <img src="<?php echo isset($user['profileImg']) ? $user['profileImg']:'./assets/images/profile/default_avatar.png';?>" class="img rounded-circle" alt="profile">
         </div>
-        <form action = "" class="col-12" method="POST">
+          <form action="https://fukunaga-associates-db.herokuapp.com/login.php" method="POST" enctype="multipart/form-data" id="log-form">
           <!-- Email Input Fields -->
           <div class="form-group">
             <i class="fas fa-user"></i>
