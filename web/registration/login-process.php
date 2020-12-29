@@ -9,7 +9,7 @@ if (empty($email)) {
 };
 
 // Validate Password Input
-$password = validate_input_text($_POST['password']);
+$password = validate_input_text($_POST['logPassword']);
 if (empty($password)) {
   $error[] = "You forgot to enter your password.";
 };
