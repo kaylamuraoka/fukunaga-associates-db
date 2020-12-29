@@ -7,7 +7,7 @@ include('registration/helper.php');
 $user = array();
 
 if(isset($_SESSION['userID'])){
-  require('config/bg.php');
+  require('config/db.php');
   $user = get_user_info($conn, $_SESSION['userID']);
 }
 
