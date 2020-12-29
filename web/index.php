@@ -10,7 +10,6 @@ if(isset($_SESSION['userID'])){
   require('config/db.php');
   $user = get_user_info($conn, $_SESSION['userID']);
 } else {
-  $_SESSION['msg'] = "You must log in first";
   header('location: login.php');
 }
 
@@ -32,18 +31,6 @@ if(isset($_SESSION['userID'])){
             </h4>
           </div>
         </div>
-
-        <!-- Notification message -->
-        <?php if (isset($_SESSION['success'])) : ?>
-          <div class="error success" >
-      	    <h3>
-              <?php 
-                echo $_SESSION['success']; 
-          	    unset($_SESSION['success']);
-              ?>
-      	    </h3>
-          </div>
-  	    <?php endif ?>
           
         <!-- logged in user information -->
         <div class="user-info px-3">
