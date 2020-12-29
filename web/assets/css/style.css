@@ -9,14 +9,9 @@
   font: normal 400 16px var(--font-ubuntu);
 }
 
-#register,
-#login {
+#register {
   padding: 5% 0;
   background-color: white;
-}
-
-#login {
-  padding: 10% 0;
 }
 
 #register .upload-profile-image {
@@ -84,6 +79,12 @@
 #log-form input[type="password"] {
   outline: none;
   box-shadow: none;
+}
+
+.login-section {
+  margin: 0 auto;
+  margin-top: 80px;
+  padding: 0;
 }
 
 .modal-content {
