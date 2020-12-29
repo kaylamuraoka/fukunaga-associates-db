@@ -4,7 +4,7 @@ require("helper.php");
 
 // Error variable
 $error = array();
-
+$errors = array();
 // Validate First Name Input
 $firstName = validate_input_text($_POST['firstName']);
 if (empty($firstName)) {
@@ -62,6 +62,7 @@ if (empty($error)) {
   $row = mysqli_fetch_array($result);
   if ($row > 0 ) {
     // if $row is greater than 0, (means the email exists)
+    array_push($errors, "Email already exists, you can try logging in with this email address.");
     echo "Error: email already exists";
   }
   else {
