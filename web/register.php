@@ -56,11 +56,12 @@
           <div class="form-row my-4">
             <div class="col">
               <input type="password" required name="password" id="password" class="form-control" placeholder="Password*">
+              <!-- Strong Password Validation -->
               <small class="text-black-50">Password must meet the following requirements:</small><br>
-              <small id="pwdLength"><i id="lengthCheck"></i> 8-20 characters</small><br>
-              <small id="pwdCapital"><i id="capCheck"></i> At least one capital letter</small><br>
-              <small id="pwdNum"><i id="numCheck"></i> At least one number</small><br>
-              <small id="pwdSpaces"><i id="spacesCheck"></i> No spaces</small><br>
+              <small id="pwdLength"><i id="lengthCheck" class="fas"></i> 8-20 characters</small><br>
+              <small id="pwdCapital"><i id="capCheck" class="fas"></i> At least one capital letter</small><br>
+              <small id="pwdNum"><i id="numCheck" class="fas"></i> At least one number</small><br>
+              <small id="pwdSpaces"><i id="spacesCheck" class="fas"></i> No spaces</small><br>
             </div>
           </div>
 
