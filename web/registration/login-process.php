@@ -38,7 +38,7 @@ if(empty($error)){
     // Verify password
     if(password_verify($password, $row['password'])) {
       // password is correct
-      // $_SESSION['userID'] = $row['userID'];
+      $_SESSION['userID'] = $row['userID'];
       header("location: index.php");
       exit();
     } else{
