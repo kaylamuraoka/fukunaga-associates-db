@@ -6,14 +6,12 @@ $errors = array();
 $email = validate_input_email($_POST['email']);
 if (empty($email)) {
   $error[] = "You forgot to enter your Email.";
-  array_push($errors, "Email is required.");
 };
 
 // Validate Password Input
 $password = validate_input_text($_POST['logPassword']);
 if (empty($password)) {
   $error[] = "You forgot to enter your password.";
-  array_push($errors, "Password is required.");
 };
 
 if(empty($error)){

@@ -105,26 +105,6 @@ $(document).ready(function (e) {
     }
   });
 
-  $("#log-form").submit(function (event) {
-    let $sessionEmail = $("#email").val();
-    let $sessionPass = $("#logPassword").val();
-    // Validate password meets all specified requirements
-    if (!$sessionEmail.trim()) {
-      // no input
-      $("#email-error").css('visibility', 'visible');
-      $("#email-error").html("You forgot to enter your Email.");
-    } else {
-      $("#email-error").css('visibility', 'hidden');
-    }
-    if (!$sessionPass.trim()) {
-      // no input
-      $("#pwd-error").css('visibility', 'visible');
-      $("#pwd-error").html("You forgot to enter your Password.");
-    } else {
-      $("#pwd-error").css('visibility', 'hidden');
-    }
-  });
-
 });
 
 function readURL(input) {
