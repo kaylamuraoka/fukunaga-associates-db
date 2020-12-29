@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
           <img src="<?php echo isset($user['profileImg']) ? $user['profileImg']:'./assets/images/profile/default_avatar.png';?>" class="img rounded-circle" alt="profile">
         </div>
         <h1 class="login-title text-light">Login</h1>
-        <form action="https://fukunaga-associates-db.herokuapp.com/index.php" method="POST" enctype="multipart/form-data" id="log-form">
+        <form action="https://fukunaga-associates-db.herokuapp.com/login.php" method="POST" enctype="multipart/form-data" id="log-form">
           <?php include('registration/errors.php'); ?>
           <!-- Email Input Fields -->
           <div class="form-group">
