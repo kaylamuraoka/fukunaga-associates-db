@@ -43,10 +43,10 @@ if(empty($error)){
       exit();
     } else{
       // password is incorrect
-      array_push($errors, "You are not a member, please register");
+      array_push($errors, "The email or password you entered is incorrect.");
     }
   } else{
-    array_push($errors, "The email or password you entered is incorrect.");
+    array_push($errors, "You are not a member, please register");
   }
 } else {
   array_push($errors, "Please fill out your email and password to login");
