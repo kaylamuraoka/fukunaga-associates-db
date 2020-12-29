@@ -16,7 +16,6 @@
       <div class="text-center pb-5">
         <h1 class="login-title text-dark">Create Account</h1>
         <p class="p-1 m-0 font-ubuntu text-black-50">Please provide your name, email address and password to create an account.</p>
-        <span class="font-ubuntu text-black-50">Already have an account? <a class="link" href="login.php">Login here</a>.</span>
       </div>
 
       <!-- Upload Photo Section -->
@@ -34,6 +33,8 @@
       <!-- Registration Form -->
       <div class="d-flex justify-content-center">
         <form action="https://fukunaga-associates-db.herokuapp.com/register.php" method="POST" enctype="multipart/form-data" id="reg-form">
+
+          <?php include('registration/errors.php'); ?>
           
           <!-- Input fields for name -->
           <div class="form-row">
@@ -80,8 +81,10 @@
 
           <!-- Submit button -->
           <div class="submit-btn text-center my-5">
-            <button type="submit" class="btn btn-warning rounded-pill text-dark px-5">Continue</button>
+            <button type="submit" class="btn btn-warning rounded-pill text-dark px-5">Register</button>
           </div>
+
+          <p class="font-ubuntu text-black-50">Already a member? <a class="link" href="login.php">Sign in</a></p>
 
         </form>
       </div>
