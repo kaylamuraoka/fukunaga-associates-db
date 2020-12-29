@@ -129,9 +129,9 @@ function validInput(element) {
 }
 
 function passwordPass(element) {
-  element.removeClass("fa-times-circle").addClass("fa-check-circle");
+  element.toggleClass('fa-times-circle fa-check-circle');
 }
 
 function passwordFail(element) {
-  element.removeClass("fa-check-circle").addClass("fa-times-circle");
+  element.toggleClass('fa-check-circle fa-times-circle');
 }
