@@ -62,7 +62,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
   </section>
 
   <div class="container text-center">
-    <div class="col-sm-10 main-section">
+    <div class="col-sm-10 col-md-9 col-lg-8 main-section">
       <div class="modal-content">
         <div class="col-12 user-img">
           <img src="<?php echo isset($user['profileImg']) ? $user['profileImg']:'./assets/images/profile/default_avatar.png';?>" class="img rounded-circle" alt="profile">
