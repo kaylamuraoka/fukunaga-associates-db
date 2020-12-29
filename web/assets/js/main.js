@@ -129,9 +129,9 @@ function validInput(element) {
 }
 
 function passwordPass(element) {
-  element.attr("class", "fa-check-circle");
+  element.attr("class", "fas fa-check-circle");
 }
 
 function passwordFail(element) {
-  element.attr("class", "fa-times-circle");
+  element.attr("class", "fas fa-times-circle");
 }

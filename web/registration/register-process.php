@@ -43,7 +43,8 @@ if (empty($error)) {
   $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
   require("config/db.php");
 
-  // Check if email exists
+  // first check the database to make sure 
+  // a user does not already exist with the same email
   $query = "SELECT email FROM users WHERE email=?";
 
   // Initialize a statement
