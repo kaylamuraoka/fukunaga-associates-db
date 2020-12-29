@@ -1,4 +1,4 @@
-<?php if (count($errors) > 0) : ?>
+<?php if (!empty($errors)) : ?>
   <div class="alert alert-danger" role="alert">
     <?php foreach ($errors as $error) : ?>
       <p><?php echo $error ?></p>
