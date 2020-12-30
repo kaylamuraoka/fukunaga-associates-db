@@ -26,6 +26,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <h1 class="login-title text-light">Login</h1>
         <form action="https://fukunaga-associates-db.herokuapp.com/login.php" method="POST" enctype="multipart/form-data" id="log-form">
+          <!-- form validation messages -->
           <?php include('registration/errors.php'); ?>
           <!-- Email Input Fields -->
           <div class="form-group">
@@ -45,7 +46,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
               </div>
               <div class="col float-right pt-1">
-                <p><a class="link font-weight-bold" href="registration/pwd_reset/enter_email.php">Forgot your password?</a></p>
+                <p><a class="link font-weight-bold" href="enter_email.php">Forgot your password?</a></p>
               </div>  
             </div>
           </div>
