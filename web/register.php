@@ -15,7 +15,7 @@
     <div class="col-lg-12">
       <div class="text-center pb-5">
         <h1 class="login-title text-dark">Create Account</h1>
-        <p class="p-1 m-0 font-ubuntu text-black-50">Please provide your name, email address and password to create an account.</p>
+        <p class="p-1 m-0 font-ubuntu text-black-50">Welcome! It's quick and easy to set up an account.</p>
       </div>
 
       <!-- Upload Photo Section -->
@@ -82,7 +82,7 @@
           <!-- Submit button -->
             <button type="submit" class="btn btn-warning rounded-pill text-dark px-5">Register</button>
 
-          <p class="font-ubuntu text-black-50">Already have an account? <a class="link" href="login.php">Login</a></p>
+          <p class="font-ubuntu text-black-50">Already a member? <a class="link" href="login.php">Login here</a></p>
 
         </form>
       </div>

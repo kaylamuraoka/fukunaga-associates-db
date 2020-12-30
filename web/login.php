@@ -31,7 +31,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
           <!-- Email Input Fields -->
           <div class="form-group">
             <i class="fas fa-envelope"></i>
-            <input type="email" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" required name="email" id="email" class="form-control" placeholder="Email">
+            <input type="email" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" required name="email" id="email" class="form-control" placeholder="Email Address">
           </div>
           <!-- Password Input Fields -->
           <div class="form-group">
@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
               </div>
               <div class="col float-right pt-1">
-                <p><a class="link font-weight-bold" href="enter_email.php">Forgot your password?</a></p>
+                <p><a class="link font-weight-bold" href="enter_email.php">Forgot password?</a></p>
               </div>  
             </div>
           </div>
@@ -54,7 +54,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
           <button type="submit" name="login-btn" class="btn"><i class="fas fa-sign-in-alt icon"></i>Sign In</button>
         </form>
         <!-- Create an account -->
-        <p class="font-ubuntu text-light font-weight-bold">Don't have an account? <a class="link font-weight-bold" href="register.php">Sign Up</a></p>
+        <p class="font-ubuntu text-light font-weight-bold">Not yet a member? <a class="link font-weight-bold" href="register.php">Signup now</a></p>
       </div>
     </div>
   </div>

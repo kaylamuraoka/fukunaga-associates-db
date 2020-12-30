@@ -49,10 +49,10 @@ if(empty($error)){
       exit();
     } else{
       // password is incorrect
-      array_push($errors, "The email or password you entered is incorrect.");
+      array_push($errors, "Incorrect email or password.");
     }
   } else{
-    array_push($errors, "No account found with that email.");
+    array_push($errors, "It looks like you're not yet a member! Click on the bottom link to signup.");
   }
 } else {
   array_push($errors, "Please fill out your email and password to login");
