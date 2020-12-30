@@ -90,7 +90,7 @@ if (empty($error)) {
       // create session variable
       $_SESSION['userID'] = mysqli_insert_id($conn);
     
-      header('location: ../login.php');
+      header('location: ../index.php');
       exit();
     } else { 
       // Error while registration

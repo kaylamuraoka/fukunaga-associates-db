@@ -31,7 +31,7 @@ function upload_profile($path, $file){
   $targetDir = $path;
   $default = "default_avatar.png";
 
-  // get filename
+  // get the filename
   $filename = basename($file['name']);
   $targetFilePath = $targetDir.$filename;
   // Returns extension of uploaded image
