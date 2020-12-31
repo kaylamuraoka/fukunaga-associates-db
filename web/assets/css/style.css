@@ -129,6 +129,10 @@ form .input-group .fas {
   border-radius: 50%;
 }
 
+.alert .alert-danger {
+  padding: 5px !important;
+}
+
 #register .upload-profile-image .camera-icon {
   position: absolute;
   top: 70px;
