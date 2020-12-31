@@ -37,41 +37,47 @@
           <?php include('registration/errors.php'); ?>
           
           <!-- Input fields for name -->
-          <div class="form-row">
-            <div class="col">
-              <input type="text" value="<?php if(isset($_POST['firstName'])) echo $_POST['firstName']; ?>" required name="firstName" id="firstName" class="form-control" placeholder="First Name*">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-user"></i></span>
             </div>
-            <div class="col">
-              <input type="text" value="<?php if(isset($_POST['lastName'])) echo $_POST['lastName']; ?>" required name="lastName" id="lastName" class="form-control" placeholder="Last Name*">
-            </div>
+            <input type="text" value="<?php if(isset($_POST['firstName'])) echo $_POST['firstName']; ?>" required name="firstName" id="firstName" class="form-control" placeholder="First Name*">
+            <input type="text" value="<?php if(isset($_POST['lastName'])) echo $_POST['lastName']; ?>" required name="lastName" id="lastName" class="form-control" placeholder="Last Name*">
           </div>
 
           <!-- Input field for email -->
-          <div class="form-row my-4">
-            <div class="col">
-              <input type="email" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" required name="email" id="email" class="form-control" placeholder="Email*">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-envelope"></i></span>
             </div>
+            <input type="email" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" required name="email" id="email" class="form-control" placeholder="Email*">
           </div>
 
           <!-- Input field for password-->
-          <div class="form-row my-4">
-            <div class="col">
-              <input type="password" required name="password" id="password" class="form-control" placeholder="Password*">
-              <!-- Strong Password Validation -->
-              <small class="text-black-50">Password must meet the following requirements:</small><br>
-              <small id="pwdLength"><i id="lengthCheck" class="fas"></i> 8-20 characters</small><br>
-              <small id="pwdCapital"><i id="capCheck" class="fas"></i> At least one capital letter</small><br>
-              <small id="pwdNum"><i id="numCheck" class="fas"></i> At least one number</small><br>
-              <small id="pwdSpaces"><i id="spacesCheck" class="fas"></i> No spaces</small><br>
+          <div class="input-group mb-0">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-lock"></i></span>
             </div>
+            <input type="password" required name="password" id="password" class="form-control" placeholder="Password*" required data-toggle="popover">
+          </div>
+          <!-- Strong Password Validation -->
+          <div class="text-left">
+            <small class="text-black-50">Password requirements:</small><br>
+            <small id="pwdLength"><i id="lengthCheck" class="fas"></i> 8-20 characters</small><br>
+            <small id="pwdCapital"><i id="capCheck" class="fas"></i> At least one capital letter</small><br>
+            <small id="pwdNum"><i id="numCheck" class="fas"></i> At least one number</small><br>
+            <small id="pwdSpaces"><i id="spacesCheck" class="fas"></i> No spaces</small><br>
           </div>
 
           <!-- Input field for confirm password -->
-          <div class="form-row my-4">
-            <div class="col">
-              <input type="password" required name="confirm_pwd" id="confirm_pwd" class="form-control" placeholder="Confirm Password*">
-              <small id="pwd-validation"></small>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-lock"></i></span>
             </div>
+            <input type="password" required name="confirm_pwd" id="confirm_pwd" class="form-control" placeholder="Confirm Password*">
+          </div>
+          <div class="text-left">
+            <small id="pwd-validation"></small>
           </div>
 
           <span class="text-black-50">By clicking "Submit," you agree to the storage and handling of your data by this website in accordance with our <a href="#">Privacy Policy</a></span>
