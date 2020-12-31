@@ -27,6 +27,11 @@ span {
   font-weight: 600 !important;
 }
 
+small {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
 a {
   color: #3ab19b;
   margin: 10px 0px 10px !important;
@@ -46,11 +51,12 @@ a:hover {
   align-items: center;
   height: 100vh;
   flex-direction: column;
+  position: relative;
 }
 
 /* Error Alerts */
 .alert {
-  padding: 5px;
+  padding: 10px;
 }
 
 .alert p {
@@ -60,24 +66,16 @@ a:hover {
   line-height: 1 !important;
 }
 
-/* Page sections styling */
-#registration {
-  background: #3ab19b;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
-}
-
 /* Styling for form */
 .form-container {
   background-color: #FFFFFF;
-  border-radius: 5px;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   width: 700px;
-  max-width: 96%;
+  max-width: 90%;
   min-height: 300px;
+  position: absolute;
+  margin: auto;
+  border-radius: 8px;
 }
 
 form {
@@ -92,12 +90,12 @@ form {
 
 form .input-group {
   margin-bottom: 22px;
+  width: 90%;
 }
 
 input {
-  padding-top: 22px !important;
-  padding-bottom: 22px !important;
-  border-radius: 5px !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
   border: 0 !important;
   background-color: #eee !important;
 }
@@ -105,6 +103,7 @@ input {
 form .input-group .input-group-text {
   border: none !important;
   background-color: #eee !important;
+  border-radius: 0 !important;
 }
 
 form .input-group .fas {
@@ -183,18 +182,6 @@ form .input-group .fas {
   box-shadow: none;
 }
 
-.user-img {
-  margin-top: -80px;
-  margin-bottom: 35px;
-}
-
-.user-img img {
-  height: 160px;
-  width: 160px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 2px #3b4652;
-}
-
 /* Button styling */
 button {
   border-radius: 20px !important;
@@ -241,7 +228,8 @@ button:focus {
   }
   span,
   button,
-  a {
+  a,
+  .alert p {
     font-size: 12px !important;
   }
   .form-container {
@@ -274,7 +262,8 @@ button:focus {
   }
   span,
   button,
-  a {
+  a,
+  .alert p {
     font-size: 12px !important;
   }
   .form-container {
@@ -302,7 +291,8 @@ button:focus {
   }
   span,
   button,
-  a {
+  a,
+  .alert p {
     font-size: 14px !important;
   }
   form {
@@ -327,7 +317,8 @@ button:focus {
   }
   span,
   button,
-  a {
+  a,
+  .alert p {
     font-size: 14px !important;
   }
   form {
@@ -352,7 +343,8 @@ button:focus {
   }
   span,
   button,
-  a {
+  a,
+  .alert p {
     font-size: 15px !important;
   }
   form {
@@ -373,12 +365,13 @@ button:focus {
   h5,
   label,
   form .input-group input {
-    font-size: 19px !important;
+    font-size: 20px !important;
   }
   span,
   button,
-  a {
-    font-size: 18px !important;
+  a,
+  .alert p {
+    font-size: 19px !important;
   }
   form {
     padding: 20px 150px;
