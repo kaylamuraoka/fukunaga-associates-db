@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
   <div class="form-container">
     <form action="https://fukunaga-associates-db.herokuapp.com/login.php" method="POST" enctype="multipart/form-data" id="log-form">
       <h1>Sign In</h1>
-      <h5 class="text-muted">Sign in with your email and password.</h5>
+      <h5 class="text-muted pb-4">Sign in with your email and password.</h5>
       <!-- form validation messages -->
       <?php include('registration/errors.php'); ?>
       
