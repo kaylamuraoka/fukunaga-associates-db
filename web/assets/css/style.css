@@ -85,7 +85,7 @@ form {
   flex-direction: column;
   height: 100%;
   text-align: center;
-  padding: 20px 60px;
+  padding: 20px 50px;
 }
 
 form .input-group {
@@ -103,7 +103,7 @@ input {
 form .input-group .input-group-text {
   border: none !important;
   background-color: #eee !important;
-  border-radius: 0 !important;
+  border-radius: 5px 0 0 5px !important;
 }
 
 form .input-group .fas {
@@ -232,9 +232,6 @@ button:focus {
   .alert p {
     font-size: 12px !important;
   }
-  .form-container {
-    padding: 10px 10px;
-  }
   form {
     padding: 15px 15px;
   }
@@ -266,9 +263,6 @@ button:focus {
   .alert p {
     font-size: 12px !important;
   }
-  .form-container {
-    padding: 30px 40px;
-  }
   form {
     padding: 20px 40px;
   }
@@ -295,9 +289,6 @@ button:focus {
   .alert p {
     font-size: 14px !important;
   }
-  form {
-    padding: 20px 90px;
-  }
 }
 @media (min-width: 801px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
@@ -320,9 +311,6 @@ button:focus {
   a,
   .alert p {
     font-size: 14px !important;
-  }
-  form {
-    padding: 20px 120px;
   }
 }
 @media (min-width: 1025px) {
@@ -347,9 +335,6 @@ button:focus {
   .alert p {
     font-size: 15px !important;
   }
-  form {
-    padding: 20px 150px;
-  }
 }
 @media (min-width: 1281px) {
   /* hi-res laptops and desktops */
@@ -372,8 +357,5 @@ button:focus {
   a,
   .alert p {
     font-size: 19px !important;
-  }
-  form {
-    padding: 20px 150px;
   }
 }
