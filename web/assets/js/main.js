@@ -11,7 +11,8 @@ $(document).ready(function (e) {
     // Validate password meets all specified requirements
     if (
       $password === $confirm &&
-      $password.length > 8 &&
+      $password.length >= 8 &&
+      $password.length <= 20 &&
       $password.match(/\d/) &&
       $password.match(/[A-Z]/) &&
       $password.indexOf(" ") < 0
@@ -46,7 +47,7 @@ $(document).ready(function (e) {
   // Validate password is strong
   $("#password").on("input", function () {
     // Validate the length
-    if ($(this).val().length < 8) {
+    if ($(this).val().length < 8 || $(this).val().length > 20) {
       $("#pwdLength").css("color", "red");
       passwordFail($("#lengthCheck"));
       invalidInput($("#password"));
