@@ -70,7 +70,7 @@
           </div>
 
           <!-- Input field for confirm password -->
-          <div class="input-group">
+          <div class="input-group mb-0">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-lock"></i></span>
             </div>
