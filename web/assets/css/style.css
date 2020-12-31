@@ -1,12 +1,93 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
-:root {
-  --font-ubuntu: "Ubuntu", monospace;
-  --color-border: #e5e5e5;
+/* Font Styling/Sizing */
+h1 {
+  font-weight: bold;
+  margin: 0 !important;
 }
 
-.font-ubuntu {
-  font: normal 400 16px var(--font-ubuntu);
+h5 {
+  font-weight: 300 !important;
+  margin: 10px 0 20px !important;
+}
+
+p {
+  font-weight: 100 !important;
+  line-height: 20px !important;
+  letter-spacing: 0.5px !important;
+  margin: 20px 0 30px !important;
+}
+
+span {
+  line-height: 20px !important; 
+  font-weight: 600 !important;
+}
+
+a {
+  color: #3ab19b;
+  margin: 10px 0px 10px !important;
+  font-weight: 600 !important;
+  margin: 20px 0 30px !important;
+}
+
+a:hover {
+  color: #3ab19b;
+}
+
+/* End of font styling */
+
+
+/* Page sections styling */
+#registration {
+  background: #3ab19b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+/* Styling for form */
+.form-container {
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  width: 700px;
+  max-width: 96%;
+  min-height: 300px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  padding: 20px 60px;
+}
+
+form .input-group {
+  margin-bottom: 22px;
+}
+
+input {
+  padding-top: 22px !important;
+  padding-bottom: 22px !important;
+  border-radius: 5px !important;
+  border: 0 !important;
+  background-color: #eee !important;
+}
+
+form .input-group .input-group-text {
+  border: none !important;
+  background-color: #eee !important;
+}
+
+form .input-group .fas {
+  font-size: 22px;
+  margin-left: 5px;
+  color: #8b9496 !important;
 }
 
 #register {
@@ -67,8 +148,6 @@
 #log-form input[type="password"] {
   border: none;
   border-radius: unset;
-  border-bottom: 1px solid var(--color-border);
-  font-family: var(--font-ubuntu);
 }
 
 #reg-form input[type="text"],
@@ -79,19 +158,6 @@
 #log-form input[type="password"] {
   outline: none;
   box-shadow: none;
-}
-
-.login-section {
-  margin: 0 auto;
-  margin-top: 110px;
-  padding: 0;
-}
-
-.modal-content {
-  background-color: #3b4652;
-  opacity: 0.95;
-  padding: 0 18px;
-  box-shadow: 0px 0px 3px #848484;
 }
 
 .user-img {
@@ -106,59 +172,30 @@
   box-shadow: 0px 0px 2px #3b4652;
 }
 
-.login-title {
-  color: #fff;
-  margin-bottom: 15px;
-}
-
-.form-group {
-  margin-bottom: 25px;
-}
-
-.form-group input {
-  height: 42px;
-  border-radius: 5px;
-  border: 0;
-  font-size: 18px;
-  padding-left: 54px;
-}
-
-.form-group i {
-  position: absolute;
-  font-size: 22px;
-  color: #555e60;
-  left: 28px;
-  padding-top: 10px;
-}
-
+/* Button styling */
 button {
-  width: 40%;
-  margin: 5px 0 15px;
+  border-radius: 20px !important;
+  border: 1px solid #3ab19b !important;
+  background-color: #3ab19b !important;
+  color: #ffffff !important;
+  font-weight: bold !important;
+  padding: 12px 40px !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in !important;
+  margin: 5px;
 }
 
-.btn {
-  background-color: #27c2a5;
-  color: #fff;
-  font-size: 19px;
-  padding: 7px 14px;
-  border-radius: 5px;
-  border-bottom: 4px solid #219882;
+button:hover {
+  transform: scale(1.08);
 }
 
-.btn:hover,
-.btn:focus {
-  background-color: #25a890 !important;
-  border-bottom: 4px solid #25a890 !important;
-  color: #fff !important;
+button:active {
+  transform: scale(0.95);
 }
 
-.icon {
-  font-size: 20px;
-  margin-right: 7px;
-}
-
-.link {
-  color: #c2fbfe !important;
+button:focus {
+  outline: none;
 }
 
 /* Media queries for responsive font sizes*/
@@ -166,120 +203,161 @@ button {
 @media (min-width: 200px) {
   /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
   h1 {
-    font-size: 28px;
+    font-size: 28px !important;
   }
   h2 {
-    font-size: 23px;
+    font-size: 23px !important;
   }
   h3 {
-    font-size: 19px;
-  }
-  h4,
-  label {
-    font-size: 15px;
+    font-size: 19px !important;
   }
   h5,
-  span {
-    font-size: 12px;
+  label,
+  form .input-group input {
+    font-size: 14px !important;
+  }
+  span,
+  button,
+  a {
+    font-size: 12px !important;
+  }
+  .form-container {
+    padding: 10px 10px;
+  }
+  form {
+    padding: 15px 15px;
+  }
+}
+@media (min-width: 370px) {
+  .form-container {
+    padding: 30px 30px;
   }
 }
 @media (min-width: 480px) {
   /* smartphones, Android phones, landscape iPhone */
   h1 {
-    font-size: 28px;
+    font-size: 28px !important;
   }
   h2 {
-    font-size: 23px;
+    font-size: 23px !important;
   }
   h3 {
-    font-size: 19px;
-  }
-  h4,
-  label {
-    font-size: 15px;
+    font-size: 19px !important;
   }
   h5,
-  span {
-    font-size: 12px;
+  label,
+  form .input-group input {
+    font-size: 14px !important;
+  }
+  span,
+  button,
+  a {
+    font-size: 12px !important;
+  }
+  .form-container {
+    padding: 30px 40px;
+  }
+  form {
+    padding: 20px 40px;
   }
 }
 @media (min-width: 600px) {
   /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
   h1 {
-    font-size: 35px;
+    font-size: 35px !important;
   }
   h2 {
-    font-size: 28px;
+    font-size: 28px !important;
   }
   h3 {
-    font-size: 19px;
-  }
-  h4,
-  label {
-    font-size: 17px;
+    font-size: 19px !important;
   }
   h5,
-  span {
-    font-size: 14px;
+  label,
+  form .input-group input {
+    font-size: 17px !important;
+  }
+  span,
+  button,
+  a {
+    font-size: 14px !important;
+  }
+  form {
+    padding: 20px 90px;
   }
 }
 @media (min-width: 801px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
   h1 {
-    font-size: 35px;
+    font-size: 35px !important;
   }
   h2 {
-    font-size: 28px;
+    font-size: 28px !important;
   }
   h3 {
-    font-size: 21px;
-  }
-  h4,
-  label {
-    font-size: 17px;
+    font-size: 21px !important;
   }
   h5,
-  span {
-    font-size: 14px;
+  label,
+  form .input-group input {
+    font-size: 17px !important;
+  }
+  span,
+  button,
+  a {
+    font-size: 14px !important;
+  }
+  form {
+    padding: 20px 120px;
   }
 }
 @media (min-width: 1025px) {
   /* big landscape tablets, laptops, and desktops */
   h1 {
-    font-size: 42px;
+    font-size: 42px !important;
   }
   h2 {
-    font-size: 32px;
+    font-size: 32px !important;
   }
   h3 {
-    font-size: 25px;
-  }
-  h4,
-  label {
-    font-size: 19px;
+    font-size: 25px !important;
   }
   h5,
-  span {
-    font-size: 15px;
+  label,
+  form .input-group input {
+    font-size: 19px !important;
+  }
+  span,
+  button,
+  a {
+    font-size: 15px !important;
+  }
+  form {
+    padding: 20px 150px;
   }
 }
 @media (min-width: 1281px) {
   /* hi-res laptops and desktops */
   h1 {
-    font-size: 42px;
+    font-size: 42px !important;
   }
   h2 {
-    font-size: 32px;
+    font-size: 32px !important;
   }
   h3 {
-    font-size: 25px;
-  }
-  h4,
-  label {
-    font-size: 19px;
+    font-size: 25px !important;
   }
   h5,
-  span {
-    font-size: 18px;
+  label,
+  form .input-group input {
+    font-size: 19px !important;
+  }
+  span,
+  button,
+  a {
+    font-size: 18px !important;
+  }
+  form {
+    padding: 20px 150px;
   }
 }
