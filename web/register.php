@@ -74,15 +74,12 @@
             </div>
           </div>
 
-          <div class="form-check form-check-inline">
-            <input type="checkbox" name="agreement" class="form-check-input" required>
-            <label for="agreement" class="form-check-label font-ubuntu text-black-50">I agree to the <a href="#">terms and conditions</a> (*)</label>
-          </div>
+          <span class="text-black-50">By clicking "Submit," you agree to the storage and handling of your data by this website in accordance with our <a href="#">Privacy Policy</a></span>
 
           <!-- Submit button -->
-            <button type="submit" class="btn btn-warning rounded-pill text-dark px-5">Register</button>
+          <button type="submit" class="my-4">Submit</button>
 
-          <p class="font-ubuntu text-black-50">Already a member? <a class="link" href="login.php">Login here</a></p>
+          <span class="text-black-50">Already a member? <a class="link" href="login.php">Login here</a></span>
 
         </form>
       </div>
