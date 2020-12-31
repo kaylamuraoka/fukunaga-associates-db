@@ -8,7 +8,7 @@ h1 {
 
 h5 {
   font-weight: 300 !important;
-  margin: 10px 0 20px !important;
+  margin: 5px 0 20px !important;
 }
 
 p {
@@ -34,8 +34,27 @@ a:hover {
   color: #3ab19b;
 }
 
-/* End of font styling */
+/* Page sections styling */
+#registration {
+  background: #3ab19b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
 
+/* Error Alerts */
+.alert {
+  padding: 7px;
+  margin-top: 0;
+}
+
+.alert p {
+  padding: 0px !important;
+  margin: 0px !important;
+  font-weight: 500 !important;
+}
 
 /* Page sections styling */
 #registration {
@@ -127,10 +146,6 @@ form .input-group .fas {
   height: 200px;
   cursor: pointer;
   border-radius: 50%;
-}
-
-.alert .alert-danger {
-  padding: 5px !important;
 }
 
 #register .upload-profile-image .camera-icon {
