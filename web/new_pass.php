@@ -1,6 +1,6 @@
 <!-- Include the page header -->
 <?php
-  include('layouts/header.php');
+  include('layouts/login/header.php');
 ?>
 
 <!-- This Page renders the Email Entry Form to reset password content below -->
@@ -51,5 +51,5 @@
 
 <!-- Include page footer -->
 <?php
-  include("layouts/footer.php");
+  include("layouts/login/footer.php");
 ?>

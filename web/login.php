@@ -1,6 +1,6 @@
 <!-- Include the page header -->
 <?php
-  include('layouts/header.php');
+  include('layouts/login/header.php');
   include('registration/helper.php');
 ?>
 
@@ -55,5 +55,5 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 </section>
 <!-- Include page footer -->
 <?php
-  include("layouts/footer.php");
+  include("layouts/login/footer.php");
 ?>
