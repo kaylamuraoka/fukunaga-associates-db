@@ -1,5 +1,15 @@
 <!doctype html>
 <html lang="en">
+<!-- logged in user information -->
+<div class="user-info px-3">
+  <ul class="navbar-nav">
+    <li class="nav-link"><b>First Name: </b><span><?php echo isset($user['firstName']) ? $user['firstName']:'';?></span>
+    </li>
+    <li class="nav-link"><b>Last Name: </b><span><?php echo isset($user['lastName']) ? $user['lastName']:'';?></span>
+    </li>
+    <li class="nav-link"><b>Email: </b><span><?php echo isset($user['email']) ? $user['email']:'';?></span></li>
+  </ul>
+</div>
 
 <head>
   <!-- Required meta tags -->

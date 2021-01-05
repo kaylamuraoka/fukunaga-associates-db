@@ -814,6 +814,10 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
       color: #3f80ea !important;
     }
 
+.illustration {
+  background: #e0eafc;
+  color: #3f80ea;
+}
 
 /* Styling for Footer */
 footer.footer {
