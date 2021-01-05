@@ -112,12 +112,12 @@ if(isset($_SESSION['userID'])){
                       <a href="#ui" data-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
                         <i class="fas fa-street-view"></i>
                         <span class="align-middle">Districts</span>
-                          <?php
+                          <!-- <?php
                             $sql = "SELECT COUNT(*) AS totalDistricts FROM district;";
                             $result = $conn->query($sql);
                             $data = mysql_fetch_assoc($result);
                               echo "<span class='badge badge-sidebar-primary'>" . $data['totalDistricts'] . "</span>";
-                          ?>
+                          ?> -->
                       </a>
                       <ul id="ui" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
                         <li class="sidebar-item">
