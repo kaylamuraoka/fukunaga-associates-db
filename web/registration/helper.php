@@ -74,20 +74,3 @@ function get_user_info($conn, $userID){
   $row = mysqli_fetch_array($result);
   return empty($row) ? false : $row;
 }
-
-// Update user info
-function update_user_info($conn, $userID){
-
-  $query = "UPDATE users SET userID=231 WHERE userID = ?";
-
-  // Initialize a statement
-  $stmt = mysqli_stmt_init($conn);
-
-  // Prepare SQL statement
-  mysqli_stmt_prepare($stmt, $query);
-
-  // Bind parameter
-  mysqli_stmt_bind_param($stmt, 'i', $userID);
-
-  
-}
