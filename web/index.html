@@ -1,18 +1,3 @@
-<?php
-// We need to use sessions, so you should always start sessions using the below code.
-session_start();
-include('registration/helper.php');
-
-$user = array();
-// If the user is not logged in redirect to the login page...
-if(isset($_SESSION['userID'])){
-  require('config/db.php');
-  $user = get_user_info($conn, $_SESSION['userID']);
-} else {
-  header('Location: login.php');
-	exit;
-}
-?>
 <!doctype html>
 <html lang="en">
 
@@ -112,12 +97,7 @@ if(isset($_SESSION['userID'])){
                       <a href="#ui" data-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
                         <i class="fas fa-street-view"></i>
                         <span class="align-middle">Districts</span>
-                          <?php
-                            $sql = "SELECT COUNT(*) AS totalDistricts FROM district;";
-                            $result = $conn->query($sql);
-                            $data = mysql_fetch_assoc($result);
-                              echo "<span class='badge badge-sidebar-primary'>" . $data['totalDistricts'] . "</span>";
-                          ?>
+                        <span class="badge badge-sidebar-primary">7</span>
                       </a>
                       <ul id="ui" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
                         <li class="sidebar-item">
@@ -393,14 +373,8 @@ if(isset($_SESSION['userID'])){
               </a>
               <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown"
                 aria-expanded="false">
-                  <img class="avatar img-fluid rounded-circle mr-1" src="<?php echo isset($user['profileImg']) ? $user['profileImg']:'assets/images/profile/default_avatar.png';?>" alt="Profile">
-                  <span class="text-dark">
-                    <?php
-                      if(isset($user['firstName'])){
-                        printf('%s %s', $user['firstName'], $user['lastName']);
-                      }
-                    ?>
-                  </span>
+                <img src="assets/images/profile/default_avatar.png" class="avatar img-fluid rounded-circle mr-1"
+                  alt="Profile"> <span class="text-dark">Jon Doe</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item" href="profile.html">
@@ -457,13 +431,7 @@ if(isset($_SESSION['userID'])){
                   <div class="row no-gutters w-100">
                     <div class="col-12">
                       <div class="illustration-text p-3 m-1">
-                        <h4 class="illustration-text">Welcome Back,  
-                          <?php
-                            if(isset($user['firstName'])){
-                              printf('%s %s', $user['firstName'], $user['lastName']);
-                            }
-                          ?>!
-                        </h4>
+                        <h4 class="illustration-text">Welcome Back, Chris!</h4>
                         <p class="mb-0">Fukunaga & Associates Dashboard</p>
                       </div>
                     </div>
