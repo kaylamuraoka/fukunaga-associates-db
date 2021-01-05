@@ -1135,12 +1135,3 @@ if(isset($_SESSION['userID'])){
 </body>
 
 </html>
-  
- 
-            <img class="img rounded-circle" style="width: 200px; height: 200px;" src="<?php echo isset($user['profileImg']) ? $user['profileImg']:'./assets/images/profile/default_avatar.png';?>" alt="profile">
-      
-          
-           
-          
-      
-   
